@@ -1,15 +1,37 @@
 import React from 'react';
-import './App.css';
-import Button from './components/Buttons/Button';
+import { Route, Switch } from 'react-router-dom';
+import { Grommet } from 'grommet';
+
+const theme = {
+  global: {
+    font: {
+      family: 'Roboto',
+      size: '18px',
+      height: '20px',
+    },
+  },
+};
 
 function App() {
   return (
-    <div className="App">
+    <Grommet theme={theme} className="App">
       <header className="App-header">
-        <h1>Hello World</h1>
-        <Button />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/profile'>
+            <Profile />
+          </Route>
+          <Route path='/profile/organizations'>
+            <OrganizationsList />
+          </Route>
+          <Route path='/profile/organizations/:id'>
+            <OrganizationCard />
+          </Route>
+        </Switch>
       </header>
-    </div>
+    </Grommet>
   );
 }
 
