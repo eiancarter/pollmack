@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Grommet } from 'grommet';
 
+import Home from './components/Home/Home.js';
+
 const theme = {
   global: {
     font: {
@@ -21,13 +23,13 @@ function App() {
             <Home />
           </Route>
           <Route path='/profile'>
-            <Profile />
+            {/* <Profile /> */}
           </Route>
           <Route path='/profile/organizations'>
-            <OrganizationsList />
+            {/* <OrganizationsList /> */}
           </Route>
           <Route path='/profile/organizations/:id'>
-            <OrganizationCard />
+            {/* <OrganizationCard /> */}
           </Route>
         </Switch>
       </header>
