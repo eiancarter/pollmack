@@ -1,25 +1,14 @@
 import React from "react";
-
-import { FormField, TextInput, Box, Grommet, Header, Button } from "grommet";
+import { Box, Grommet, Header} from "grommet";
 import { grommet } from "grommet/themes";
 
-  
+import HomeLogin from './HomeLogin';
 
 const HomeNav = () => (
   <Grommet theme={grommet}>
     <Header background="light-4" pad="small"> pollmack
       <Box direction="row" gap="medium">
-        <FormField direction='row' htmlFor='text-input'>
-            <TextInput
-                id='email-input'
-                placeholder='email'
-                />
-            <TextInput
-                id='password-input'
-                placeholder='password'
-                />
-            <Button>Log In</Button>
-        </FormField>
+        <HomeLogin />
       </Box>
     </Header>
   </Grommet>
