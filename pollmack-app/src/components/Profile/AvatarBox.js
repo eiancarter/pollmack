@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { Box, Heading } from "grommet";
 
-import Avatar from './Avatar';
+import Avatar from './ProfileAvatar';
 
 const AvatarBox = () => {
     return (

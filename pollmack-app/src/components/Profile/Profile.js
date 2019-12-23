@@ -2,9 +2,10 @@ import React from "react";
 
 import { Anchor, Box, Grommet, Header } from "grommet";
 import { grommet } from "grommet/themes";
-import Avatar from './Avatar';
+import ProfileAvatar from './ProfileAvatar';
 import FundBox from './FundBox';
 import AvatarBox from './AvatarBox';
+import PostList from './PostList';
 
 
 const Profile = () => (
@@ -13,13 +14,16 @@ const Profile = () => (
       <Box direction="row" gap="medium">
         <Anchor label="Home" href="/profile" />
       </Box>
-      <Avatar />
+      <ProfileAvatar />
     </Header>
     <Box>
         <AvatarBox />
     </Box>
     <Box>
         <FundBox />
+    </Box>
+    <Box>
+      <PostList />
     </Box>
   </Grommet>
 );

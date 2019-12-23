@@ -15,7 +15,8 @@ const FundBox = () => (
       round="large"
     >
       <Text color="white">Current Balance: $642.00</Text>
-      <Box>
+      <Box
+        >
         <Button color="white">Add Funds</Button>
         <Button color="white">Edit Payment Methods</Button>
       </Box>
