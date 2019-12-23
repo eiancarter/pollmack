@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Grommet } from 'grommet';
 
 import Home from './components/Home/Home.js';
+import Profile from './components/Profile/Profile';
 
 const theme = {
   global: {
@@ -23,7 +24,7 @@ function App() {
             <Home />
           </Route>
           <Route path='/profile'>
-            {/* <Profile /> */}
+            <Profile />
           </Route>
           <Route path='/profile/organizations'>
             {/* <OrganizationsList /> */}
