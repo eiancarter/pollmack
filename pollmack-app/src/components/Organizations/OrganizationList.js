@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Box, Header, Anchor } from 'grommet';
+import { Grommet, Box, Anchor, Header } from 'grommet';
 import { grommet } from 'grommet/themes'; 
 
 import OrganizationCard from './OrganizationCard';
