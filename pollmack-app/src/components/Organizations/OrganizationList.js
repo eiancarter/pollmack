@@ -3,6 +3,7 @@ import { Grommet, Box, Anchor, Header } from 'grommet';
 import { grommet } from 'grommet/themes'; 
 
 import OrganizationCard from './OrganizationCard';
+import ProfileAvatar from '../Profile/ProfileAvatar';
 
 
 const OrganizationList = () => {
@@ -12,7 +13,7 @@ const OrganizationList = () => {
                 <Box direction="row" gap="medium">
                     <Anchor label="Home" href="/profile" />
                 </Box>
-                {/* <ProfileAvatar /> */}
+                <ProfileAvatar />
             </Header>
             <Box>
                 <OrganizationCard />
