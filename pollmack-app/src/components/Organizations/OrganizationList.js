@@ -29,15 +29,16 @@ const OrganizationList = () => {
                 </Box>
                 <ProfileAvatar />
             </Header>
+            <Heading>Political Candidates</Heading>
             <Box>
-                <Heading>Political Candidates</Heading>
                 {candidates.map(candidate => {
                     return (
                         <OrganizationCard 
                         key={candidate.id} 
                         name={candidate.name} 
                         party={candidate.party_full} 
-                        office={candidate.office_full} organization={candidate.organization_type_full} district={candidate.district} 
+                        office={candidate.office_full} 
+                        district={candidate.district} 
                         state={candidate.state} 
                         status={candidate.candidate_status}/>
                     )
