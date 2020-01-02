@@ -9,10 +9,12 @@ import { FormField, TextInput, Grommet, Button } from "grommet";
                 <TextInput
                 id='email-input'
                 placeholder='email'
+                type=''
                 />
                 <TextInput
                 id='password-input'
                 placeholder='password'
+                type='password'
                 />
                 <Button>Log In</Button>
             </FormField>

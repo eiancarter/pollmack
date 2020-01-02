@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from 'grommet';
 
 
-const Avatar = ({ name, ...rest }) => (
+const ProfileAvatar = ({ name, ...rest }) => (
     <Box
       height="xxsmall"
       width="xxsmall"
@@ -12,4 +12,4 @@ const Avatar = ({ name, ...rest }) => (
     />
   );
 
-export default Avatar;
+export default ProfileAvatar;
