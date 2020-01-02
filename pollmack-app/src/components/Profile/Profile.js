@@ -7,6 +7,10 @@ import FundBox from './FundBox';
 import AvatarBox from './AvatarBox';
 import PostList from './PostList';
 
+const profileStyle = {
+  display: 'flex',
+  flexDirection: 'row'
+};
 
 const Profile = () => (
   <Grommet theme={grommet}>
@@ -16,10 +20,8 @@ const Profile = () => (
       </Box>
       <ProfileAvatar />
     </Header>
-    <Box>
+    <Box style={profileStyle}>
         <AvatarBox />
-    </Box>
-    <Box>
         <FundBox />
     </Box>
     <Box>

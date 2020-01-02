@@ -12,7 +12,7 @@ const FundBox = () => (
       align="center"
       pad="xlarge"
       background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
-      round="large"
+      round="medium"
     >
       <Text color="white">Current Balance: $642.00</Text>
       <Box
