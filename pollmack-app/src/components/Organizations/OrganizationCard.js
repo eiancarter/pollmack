@@ -12,29 +12,9 @@ const OrganizationCard = () => {
                     <Heading>Member Since</Heading>
                     <Paragraph>Total Donations</Paragraph>    
                 </Box>
-                <Box border='all' align='center'>
-                    <Heading>Organization Name</Heading>
-                    <Heading>Member Since</Heading>
-                    <Paragraph>Total Donations</Paragraph>
-                </Box>
-                <Box border='all' align='center'>
-                    <Heading>Organization Name</Heading>
-                    <Heading>Member Since</Heading>
-                    <Paragraph>Total Donations</Paragraph>
-                </Box>
             </Box>
             <Heading>Social Organizations</Heading>
             <Box align='center'>
-                <Box border='all' align='center'>
-                    <Heading>Organization Name</Heading>
-                    <Heading>Member Since</Heading>
-                    <Paragraph>Total Donations</Paragraph>
-                </Box>
-                <Box border='all' align='center'>
-                    <Heading>Organization Name</Heading>
-                    <Heading>Member Since</Heading>
-                    <Paragraph>Total Donations</Paragraph>
-                </Box>
                 <Box border='all' align='center'>
                     <Heading>Organization Name</Heading>
                     <Heading>Member Since</Heading>
