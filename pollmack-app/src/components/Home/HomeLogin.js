@@ -4,7 +4,6 @@ import { FormField, TextInput, Grommet, Button } from "grommet";
 
 const homeLogin = {
     display: 'flex',
-    flexDirection: 'row',
     height: '12vh'
 };
 const homeButton = {
@@ -23,7 +22,7 @@ const homeButton = {
                 <TextInput
                 id='email-input'
                 placeholder='email'
-                type=''
+                type='email'
                 />
                 <TextInput
                 id='password-input'

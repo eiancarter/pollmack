@@ -12,7 +12,7 @@ function Home(){
                 <HomeNav />
             </Box>
             <Box>
-            <HomeHeading />
+                <HomeHeading />
             </Box>
             <Box>
                 <HomeSignUp />
