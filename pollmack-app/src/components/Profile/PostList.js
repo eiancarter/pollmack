@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Button } from 'grommet';
+import { Grommet, Button, Box } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import PostCard from './PostCard';
@@ -10,9 +10,11 @@ const PostList = () => {
 
     return (
         <Grommet theme={grommet}>
+            <CreatePost />
             <Button>Post+</Button>
-                <CreatePost />
-            <PostCard />
+            <Box>
+                <PostCard />
+            </Box>
         </Grommet>
     )
 }

@@ -54,10 +54,10 @@ const AvatarBox = () => {
                 round="large"
             >
                 <Avatar style={styleImage}/>
-                <Heading style={styleCardTitle}>Contributor Name</Heading>
-                <Heading style={styleLocationLabel}>Member Since</Heading>
-                <Heading style={styleDescription}>Total Donated</Heading>
-                <Heading style={styleDescription}>Number of Orgs</Heading>
+                <Heading style={styleCardTitle}>Veronica Mars</Heading>
+                <Heading style={styleLocationLabel}>Member Since: February 2018</Heading>
+                <Heading style={styleDescription}>Total Donated: $389.00</Heading>
+                <Heading style={styleDescription}>Candidates Backed: 3</Heading>
             </Box>
         </Box>
     )
