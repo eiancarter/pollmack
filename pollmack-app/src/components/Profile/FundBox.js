@@ -24,7 +24,7 @@ const currBalance = {
 const FundBox = () => (
   <Grommet theme={grommet}>
     <Box
-      width='medium'
+      // width='medium'
       height='medium'
       justify="center"
       align="center"
