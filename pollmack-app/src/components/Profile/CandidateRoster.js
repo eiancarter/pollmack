@@ -30,7 +30,7 @@ const CandidateRoster = () => {
     return (
         <Grommet theme={grommet}>
         <Box style={candidateCardContent}
-          // width='medium'
+          width='medium'
           height='medium'
           justify="center"
           align="center"

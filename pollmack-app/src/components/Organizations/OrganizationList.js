@@ -23,10 +23,11 @@ const OrganizationList = () => {
     }, []);
     return (
         <Grommet theme={grommet}>
-            <Header background="light-4" pad="small"> pollmack
-                <Box direction="row" gap="medium">
-                    <Anchor label="Home" href="/profile" />
-                </Box>
+            <Header background="light-4" pad="small">
+                <Anchor label="pollmack" href="/profile" />
+                {/* <Box direction="row" gap="medium">
+                    <Anchor label="Pending" href="/profile" />
+                </Box> */}
                 <ProfileAvatar />
             </Header>
             <Heading>Presidential Candidates</Heading>
