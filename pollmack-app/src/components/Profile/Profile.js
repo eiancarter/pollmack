@@ -6,6 +6,7 @@ import ProfileAvatar from './ProfileAvatar';
 import FundBox from './FundBox';
 import AvatarBox from './AvatarBox';
 import PostList from './PostList';
+import UserCandidates from "./CandidateRoster";
 
 const profileStyle = {
   display: 'flex',
@@ -25,6 +26,7 @@ const Profile = () => (
     <Box style={profileStyle}>
         <AvatarBox />
         <FundBox />
+        <UserCandidates />
     </Box>
     <Box>
       <PostList />
