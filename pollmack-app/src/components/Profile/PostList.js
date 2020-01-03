@@ -7,7 +7,7 @@ import CreatePost from './CreatePost';
 
 
 const PostList = () => {
-
+    
     return (
         <Grommet theme={grommet}>
             <CreatePost />
