@@ -18,6 +18,7 @@ const Profile = () => (
       <Heading>pollmack</Heading>
       <Box direction="row" gap="medium">
         <Anchor label="Home" href="/profile" />
+        <Anchor label="Search Candidates" href="/profile/organizations" />
       </Box>
       <ProfileAvatar />
     </Header>

@@ -30,7 +30,7 @@ const OrganizationList = () => {
                 <ProfileAvatar />
             </Header>
             <Heading>Political Candidates</Heading>
-            <Box>
+            <Box overflow="hidden" direction="row" gap="small">
                 {candidates.map(candidate => {
                     return (
                         <OrganizationCard 

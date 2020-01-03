@@ -30,7 +30,7 @@ function App() {
           <Route exact path='/profile/organizations'>
             <OrganizationsList />
           </Route>
-          <Route path='/profile/organizations/:id'>
+          <Route exact path='/profile/organizations/:id'>
             {/* <OrganizationCard /> */}
           </Route>
         </Switch>
