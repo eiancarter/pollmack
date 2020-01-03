@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Box, Text, Button } from 'grommet';
+import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
 import { grommet } from "grommet/themes";
 
 
@@ -17,7 +17,6 @@ const candidateButton = {
     textAlign: 'center',
     fontSize: '1.5rem',
     fontStyle: 'bold',
-    name: 'Dan Crenshaw'
   }
   
   const candidateCardContent = {
@@ -38,7 +37,34 @@ const CandidateRoster = () => {
           background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
           round="medium"
         >
-          <Text style={candidateCards}>{candidateCards.name}</Text>
+            <Table style={candidateCards}
+                align="center"
+                color="white">
+                <TableHeader>
+                    <TableRow>
+                    <TableCell scope="col" border="bottom">
+                        Name
+                    </TableCell>
+                    <TableCell scope="col" border="bottom">
+                        Party
+                    </TableCell>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TableRow>
+                    <TableCell scope="row">
+                        <strong>Eric Crenshaw</strong>
+                    </TableCell>
+                    <TableCell>Democrat</TableCell>
+                    </TableRow>
+                    <TableRow>
+                    <TableCell scope="row">
+                        <strong>Chris Pelosi</strong>
+                    </TableCell>
+                    <TableCell>Republican</TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
           <br></br>
           <Box>
             <Button style={candidateButton}>Add Candidate</Button>
