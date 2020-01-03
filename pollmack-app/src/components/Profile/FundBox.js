@@ -21,14 +21,20 @@ const currBalance = {
   amount: '647.00'
 }
 
+const fundCardContent = {
+  padding: "4px 16px 20px 16px",
+  boxShadow: "1px 1px 2px 2px lightgrey",
+  margin: "15px"
+};
+
 const FundBox = () => (
   <Grommet theme={grommet}>
-    <Box
+    <Box style={fundCardContent}
       // width='medium'
       height='medium'
       justify="center"
       align="center"
-      pad="xlarge"
+      pad="large"
       background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
       round="medium"
     >

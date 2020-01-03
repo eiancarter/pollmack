@@ -4,7 +4,6 @@ import { Box, Heading } from "grommet";
 import Avatar from './ProfileAvatar';
 
 const styleCard = {
-    margin: '0 auto',
     // boxShadow: "0px 0px 8px #ccc",
     // borderRadius: "8px",
     color: "#253B56",
@@ -40,6 +39,7 @@ const styleCard = {
   
   const styleCardContent = {
     padding: "4px 16px 20px 16px",
+    boxShadow: "1px 1px 2px 2px lightgrey"
   };
 
 const AvatarBox = () => {
@@ -51,7 +51,7 @@ const AvatarBox = () => {
                 justify="center"
                 align="center"
                 pad="xlarge"
-                round="large"
+                round="medium"
             >
                 <Avatar style={styleImage}/>
                 <Heading style={styleCardTitle}>Veronica Mars</Heading>
