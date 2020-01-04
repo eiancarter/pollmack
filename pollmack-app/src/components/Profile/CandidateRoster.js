@@ -63,6 +63,24 @@ const CandidateRoster = () => {
                     </TableCell>
                     <TableCell>Republican</TableCell>
                     </TableRow>
+                    <TableRow>
+                    <TableCell scope="row">
+                        <strong>Donald Trump</strong>
+                    </TableCell>
+                    <TableCell>Republican</TableCell>
+                    </TableRow>
+                    <TableRow>
+                    <TableCell scope="row">
+                        <strong>Barrack Obama</strong>
+                    </TableCell>
+                    <TableCell>Democrat</TableCell>
+                    </TableRow>
+                    <TableRow>
+                    <TableCell scope="row">
+                        <strong>Hillary Clinton</strong>
+                    </TableCell>
+                    <TableCell>Criminal</TableCell>
+                    </TableRow>
                 </TableBody>
             </Table>
           <br></br>
