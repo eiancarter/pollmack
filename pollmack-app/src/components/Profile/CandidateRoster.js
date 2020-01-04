@@ -29,7 +29,7 @@ const CandidateRoster = () => {
     return (
         <Grommet theme={grommet}>
         <Box style={candidateCardContent}
-          width='medium'
+          width='large'
           height='medium'
           justify="center"
           align="center"
@@ -48,39 +48,45 @@ const CandidateRoster = () => {
                     <TableCell scope="col" border="bottom">
                         Party
                     </TableCell>
+                    <TableCell scope="col" border="bottom">
+                        Office
+                    </TableCell>
+                    <TableCell scope="col" border="bottom">
+                        Contributed
+                    </TableCell>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <TableRow>
-                    <TableCell scope="row">
-                        <strong>Eric Crenshaw</strong>
-                    </TableCell>
+                  <TableRow>
+                    <TableCell scope="row"><strong>Eric Crenshaw</strong></TableCell>
                     <TableCell>Democrat</TableCell>
-                    </TableRow>
-                    <TableRow>
-                    <TableCell scope="row">
-                        <strong>Chris Pelosi</strong>
-                    </TableCell>
+                    <TableCell>President</TableCell>
+                    <TableCell>$100</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell scope="row"><strong>Chris Pelosi</strong></TableCell>
                     <TableCell>Republican</TableCell>
-                    </TableRow>
-                    <TableRow>
-                    <TableCell scope="row">
-                        <strong>Donald Trump</strong>
-                    </TableCell>
+                    <TableCell>President</TableCell>
+                    <TableCell>$100</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell scope="row"><strong>Donald Trump</strong></TableCell>
                     <TableCell>Republican</TableCell>
-                    </TableRow>
-                    <TableRow>
-                    <TableCell scope="row">
-                        <strong>Barrack Obama</strong>
-                    </TableCell>
+                    <TableCell>President</TableCell>
+                    <TableCell>$100</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell scope="row"><strong>Barrack Obama</strong></TableCell>
                     <TableCell>Democrat</TableCell>
-                    </TableRow>
-                    <TableRow>
-                    <TableCell scope="row">
-                        <strong>Hillary Clinton</strong>
-                    </TableCell>
+                    <TableCell>President</TableCell>
+                    <TableCell>$100</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell scope="row"><strong>Hillary Clinton</strong></TableCell>
                     <TableCell>Criminal</TableCell>
-                    </TableRow>
+                    <TableCell>President</TableCell>
+                    <TableCell>$100</TableCell>
+                  </TableRow>
                 </TableBody>
             </Table>
           <br></br>
