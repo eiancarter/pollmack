@@ -1,49 +1,44 @@
 import React from 'react'; 
-import { Box, Heading } from "grommet";
-
+import { Grommet, Box, Heading, SubHeading, Text } from "grommet";
+import { grommet } from 'grommet/themes';
 import Avatar from './ProfileAvatar';
 
 const styleCard = {
-    // boxShadow: "0px 0px 8px #ccc",
-    // borderRadius: "8px",
     color: "#253B56",
     padding: '15px',
   };
   
   const styleImage = {
-    height: 120,
-    width: 120,
     backgroundColor: "lightGray",
-    borderRadius: "8px 8px 8px 8px",
-    overflow: "hidden"
+    overflow: "hidden",
+    width: "100%",
+    minHeight: "187px"
   };
   
   const styleCardTitle = {
     fontFamily: "Avenir-Heavy",
-    fontSize: 20,
+    fontSize: "1.3rem",
     fontWeight: 600,
-    margin: "12px 0px 0px 0px",
-    color: "#1994D7"
+    color: "#1994D7",
   };
   
   const styleLocationLabel = {
     fontSize: 14,
-    margin: "4px 0",
     color: "#8294AA"
   };
   
   const styleDescription = {
     fontSize: 14,
-    margin: "8px 0 0 0"
   };
   
   const styleCardContent = {
-    padding: "4px 16px 20px 16px",
+    // padding: "4px 16px 20px 16px",
     boxShadow: "1px 1px 2px 2px lightgrey"
   };
 
 const AvatarBox = () => {
     return (
+      <Grommet theme={grommet}>
         <Box style={styleCard}>
             <Box style={styleCardContent}
                 width='medium'
@@ -53,13 +48,14 @@ const AvatarBox = () => {
                 pad="xlarge"
                 round="medium"
             >
-                <Avatar style={styleImage}/>
+                <Avatar size="large" style={styleImage}/>
                 <Heading style={styleCardTitle}>Veronica Mars</Heading>
-                <Heading style={styleLocationLabel}>Member Since: February 2018</Heading>
-                <Heading style={styleDescription}>Total Donated: $389.00</Heading>
-                <Heading style={styleDescription}>Candidates Backed: 3</Heading>
+                <Text style={styleLocationLabel}>Member Since: February 2018</Text>
+                <Text style={styleDescription}>Total Donated: $389.00</Text>
+                <Text style={styleDescription}>Candidates Backed: 3</Text>
             </Box>
         </Box>
+      </Grommet>
     )
 }
 

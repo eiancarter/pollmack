@@ -28,7 +28,9 @@ const OrganizationList = () => {
                 {/* <Box direction="row" gap="medium">
                     <Anchor label="Pending" href="/profile" />
                 </Box> */}
-                <ProfileAvatar />
+                <Anchor href="/profile">
+                    <ProfileAvatar />
+                </Anchor>
             </Header>
             <Heading>Presidential Candidates</Heading>
             <Button>Filter</Button>

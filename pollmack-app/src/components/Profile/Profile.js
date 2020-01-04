@@ -7,6 +7,7 @@ import FundBox from './FundBox';
 import AvatarBox from './AvatarBox';
 import PostList from './PostList';
 import UserCandidates from "./CandidateRoster";
+import UserBio from './UserBio';
 
 const profileStyle = {
   display: 'flex',
@@ -20,14 +21,17 @@ const Profile = () => (
       <Box direction="row" gap="medium">
         <Anchor label="Search Candidates" href="/profile/organizations" />
       </Box>
-      <ProfileAvatar />
+      <Anchor href="/profile">
+        <ProfileAvatar />
+      </Anchor>
     </Header>
     <Box style={profileStyle}>
         <AvatarBox />
         <FundBox />
         <UserCandidates />
     </Box>
-    <Box>
+    <Box direction="row" gap="medium">
+      <UserBio />
       <PostList />
     </Box>
   </Grommet>

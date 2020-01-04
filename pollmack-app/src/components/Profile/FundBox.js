@@ -30,7 +30,7 @@ const fundCardContent = {
 const FundBox = () => (
   <Grommet theme={grommet}>
     <Box style={fundCardContent}
-      width='medium'
+      width='small'
       height='medium'
       justify="center"
       align="center"
