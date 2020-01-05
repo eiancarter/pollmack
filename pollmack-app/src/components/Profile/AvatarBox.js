@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Grommet, Box, Heading, SubHeading, Text } from "grommet";
+import { Grommet, Box, Heading, Text } from "grommet";
 import { grommet } from 'grommet/themes';
 import Avatar from './ProfileAvatar';
 
@@ -19,7 +19,7 @@ const styleCard = {
     fontFamily: "Avenir-Heavy",
     fontSize: "1.3rem",
     fontWeight: 600,
-    color: "#1994D7",
+    color: "#1994D7"
   };
   
   const styleLocationLabel = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Button, Box, Stack } from 'grommet';
+import { Grommet, Box, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import PostCard from './PostCard';
@@ -20,12 +20,10 @@ const PostList = () => {
           justify="center"
           align="center"
           pad="large"
-          background="lightgrey"
-          round="medium">
-                <Button>Post+</Button>
+          round="medium"
+          background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)">
                 <CreatePost />
                 <Stack anchor="top-right">
-                    {/* <Icons.Notification size="large" /> */}
                     <PostCard />
                 </Stack>
             </Box>

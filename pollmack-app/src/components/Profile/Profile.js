@@ -17,7 +17,7 @@ const profileStyle = {
 const Profile = () => (
   <Grommet theme={grommet}>
     <Header background="light-4" pad="small">
-      <Anchor label="pollmack" href="/profile">pollmack</Anchor>
+      <Anchor label="pollmack" href="/profile" />
       <Box direction="row" gap="medium">
         <Anchor label="Search Candidates" href="/profile/organizations" />
       </Box>
