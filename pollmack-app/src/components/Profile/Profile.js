@@ -9,10 +9,6 @@ import PostList from './PostList';
 import UserCandidates from "./CandidateRoster";
 import UserBio from './UserBio';
 
-const profileStyle = {
-  display: 'flex',
-  flexDirection: 'row'
-};
 
 const Profile = () => (
   <Grommet theme={grommet}>
@@ -25,7 +21,7 @@ const Profile = () => (
         <ProfileAvatar />
       </Anchor>
     </Header>
-    <Box style={profileStyle}>
+    <Box>
         <AvatarBox />
         <FundBox />
         <UserCandidates />
