@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
 import { grommet } from "grommet/themes";
 import axios from 'axios';
+import { data } from '../../data';
   
-const CandidateRoster = () => {
-  const [candidates, setCandidates] = useState();
+const CandidateRoster = props => {
+  const [candidates, setCandidates] = useState([]);
 
-  useEffect = () => { 
-    axios
-      .get('/Data')
-      .then()
+  // useEffect = () => {}
 
-  }
+
     return (
         <Grommet theme={grommet}>
         <Box
@@ -42,9 +40,9 @@ const CandidateRoster = () => {
                     </TableCell>
                     </TableRow>
                 </TableHeader>
-                <TableBody>
+                <TableBody>hello
                     {/* {props.candidates.map( candidate => {
-                      <TableRow key={candidate.id}>
+                      <TableRow key={props.candidate.id}>
                         <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
                         <TableCell>{candidate.party}</TableCell>
                         <TableCell>{candidate.office}</TableCell>
