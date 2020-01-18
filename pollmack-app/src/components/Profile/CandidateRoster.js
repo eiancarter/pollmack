@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
 import { grommet } from "grommet/themes";
-
+import axios from 'axios';
   
 const CandidateRoster = () => {
+  const [candidates, setCandidates] = useState();
+
+  useEffect = () => { 
+    axios
+      .get('/Data')
+      .then()
+
+  }
     return (
         <Grommet theme={grommet}>
         <Box
@@ -35,36 +43,14 @@ const CandidateRoster = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                  <TableRow>
-                    <TableCell scope="row"><strong>Eric Crenshaw</strong></TableCell>
-                    <TableCell>Democrat</TableCell>
-                    <TableCell>President</TableCell>
-                    <TableCell>$100</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell scope="row"><strong>Chris Pelosi</strong></TableCell>
-                    <TableCell>Republican</TableCell>
-                    <TableCell>President</TableCell>
-                    <TableCell>$100</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell scope="row"><strong>Donald Trump</strong></TableCell>
-                    <TableCell>Republican</TableCell>
-                    <TableCell>President</TableCell>
-                    <TableCell>$100</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell scope="row"><strong>Barrack Obama</strong></TableCell>
-                    <TableCell>Democrat</TableCell>
-                    <TableCell>President</TableCell>
-                    <TableCell>$100</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell scope="row"><strong>Hillary Clinton</strong></TableCell>
-                    <TableCell>Criminal</TableCell>
-                    <TableCell>President</TableCell>
-                    <TableCell>$100</TableCell>
-                  </TableRow>
+                    {props.candidates.map( candidate => {
+                      <TableRow key={candidate.id}>
+                        <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
+                        <TableCell>{candidate.party}</TableCell>
+                        <TableCell>{candidate.office}</TableCell>
+                        <TableCell>{candidate.contribution}</TableCell>
+                      </TableRow>
+                    })}
                 </TableBody>
             </Table>
           <br></br>
