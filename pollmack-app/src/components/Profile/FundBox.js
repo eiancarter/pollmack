@@ -3,22 +3,25 @@ import React from "react";
 import { Grommet, Box, Text, Button } from "grommet";
 import { grommet } from "grommet/themes";
 
+
+
 const FundBox = () => (
   <Grommet theme={grommet}>
     <Box
-      width='medium'
+      width='small'
       height='medium'
       justify="center"
       align="center"
-      pad="xlarge"
-      background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
+      pad="large"
       round="medium"
     >
-      <Text color="white">Current Balance: $642.00</Text>
+      <Text>Balance: $20</Text>
+      <br></br>
       <Box
         >
-        <Button color="white">Add Funds</Button>
-        <Button color="white">Edit Payment Methods</Button>
+        <Button>Add Funds</Button>
+        <br></br>
+        <Button>Edit Payments</Button>
       </Box>
     </Box>
   </Grommet>

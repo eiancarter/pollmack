@@ -6,7 +6,12 @@ import { grommet } from 'grommet/themes';
 const PostCard = () => {
     return (
         <Grommet theme={grommet}>
-            <Box border='all' align='center' pad='large'>Post Card Displays Here
+            <Box 
+                // pad={{ horizontal: 'xsmall' }}
+                width="large" 
+                align="center" 
+                pad="large"
+            >Post Card Displays Here
             </Box>
         </Grommet>
     );

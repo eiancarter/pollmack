@@ -2,11 +2,18 @@ import React from 'react';
 import { Grommet, Box, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+
 const styleCard = {
     margin: "12px 0px",
     boxShadow: "0px 0px 8px #ccc",
     borderRadius: "8px",
-    color: "#253B56"
+    color: "#253B56",
+    height: "200px",
+    width: "200px",
+    position: "relative",
+    display: "inline-block",
+    overflow: "hidden",
+    cursor: "pointer"
   };
   
 //   const styleImage = {

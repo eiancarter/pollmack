@@ -5,6 +5,38 @@ import axios from 'axios';
 import { Button } from 'grommet';
 
 
+const styleCard = {
+    margin: "12px 0px",
+    boxShadow: "0px 0px 8px #ccc",
+    borderRadius: "8px",
+    color: "#253B56",
+  };
+  
+//   const styleImage = {
+//     height: 120,
+//     backgroundColor: "lightGray",
+//     borderRadius: "8px 8px 0 0",
+//     overflow: "hidden"
+//   };
+  
+  const styleLocationLabel = {
+    fontSize: 14,
+    margin: "4px 0",
+    color: "#8294AA"
+  };
+
+  const styleCardContent = {
+    padding: "4px 16px 20px 16px"
+  };
+
+  const homeButton = {
+    background: 'navy',
+    borderRadius: '6px',
+    color: 'white',
+    textAlign: 'center',
+    padding: '5px',
+    fontSize: '1rem'
+  };
 
 function HomeForm({ errors, touched, values, status }) {
     const [users, setUsers] = useState([]);
@@ -14,8 +46,14 @@ function HomeForm({ errors, touched, values, status }) {
     }, [status]);
 
     return (
-        <div className='formik-form'>
-            <Form>
+        <div style={styleCardContent} className='formik-form'>
+            <Form style={styleCard}
+                height='medium'
+                justify="center"
+                align="center"
+                pad="xlarge"
+                background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
+                round="medium">
                 <Field id='name' type='text' placeholder='name' name='name' />
                 <div>
                     {touched.email && errors.email && <p>{errors.email}</p>}
@@ -26,12 +64,12 @@ function HomeForm({ errors, touched, values, status }) {
                     <Field id='password' type='password' placeholder='password' name='password' />
                 </div>
                 <label htmlFor='terms-of-service'>
-                    <Field name='tos' type='checkbox' checked={values.tos}/>
+                    <Field style={styleLocationLabel} name='tos' type='checkbox' checked={values.tos}/>
                     Terms of Service
                 </label>
                 <br></br>
                 <br></br>
-                <Button type='submit'>Sign Up</Button>
+                <Button style={homeButton} type='submit'>Sign Up</Button>
             </Form>
             {users.map(user => (
                 <ul key={user.id}>
