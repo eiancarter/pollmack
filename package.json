@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "curl": "^0.1.4"
+    "curl": "^0.1.4",
+    "expres": "^0.0.5",
+    "express": "^4.17.1",
+    "node": "^13.6.0"
   }
 }
