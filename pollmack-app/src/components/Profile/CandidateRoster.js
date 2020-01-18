@@ -43,14 +43,14 @@ const CandidateRoster = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {props.candidates.map( candidate => {
+                    {/* {props.candidates.map( candidate => {
                       <TableRow key={candidate.id}>
                         <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
                         <TableCell>{candidate.party}</TableCell>
                         <TableCell>{candidate.office}</TableCell>
                         <TableCell>{candidate.contribution}</TableCell>
                       </TableRow>
-                    })}
+                    })} */}
                 </TableBody>
             </Table>
           <br></br>
