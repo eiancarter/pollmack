@@ -7,7 +7,7 @@ import OrganizationCard from './OrganizationCard';
 import ProfileAvatar from '../Profile/ProfileAvatar';
 
 
-const OrganizationList = () => {
+const CandidateList = () => {
     //AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo = API Key
     const [candidates, setCandidates] = useState([]);
     useEffect(() => {
@@ -68,5 +68,5 @@ const OrganizationList = () => {
     )
 };
 
-export default OrganizationList;
+export default CandidateList;
  

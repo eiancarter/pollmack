@@ -1,4 +1,6 @@
-exports.data = [
+// exports.data = [
+
+export const candidates = [
     {
         id: 1,
         name: 'Dan Crenshaw',
@@ -35,3 +37,4 @@ exports.data = [
         contribution: '$20.00'
     }
 ];
+
