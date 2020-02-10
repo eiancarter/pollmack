@@ -20,7 +20,7 @@ const CandidateList = () => {
             .catch (error => {
                 console.log('No Candidates Found', error);
             })
-    }, []);
+    }, [setCandidates]);
     return (
         <Grommet theme={grommet}>
             <Header background="light-4" pad="small">
