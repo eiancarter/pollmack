@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
 import { grommet } from "grommet/themes";
 import axios from 'axios';
-import { data } from '../../data.js';
+import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
   const [candidates, setCandidates] = useState([]);
   
     useEffect( () => {
-      setCandidates(data);
-    })
+      setCandidates(candidateList);
+    }, [])
     // useEffect(() => {
     //   axios
     //       .get('https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo')
@@ -53,14 +53,14 @@ const CandidateRoster = props => {
                 </TableHeader>
                 <TableBody>
                   {/* <TableRow><TableCell>hello</TableCell></TableRow> */}
-                    {props.candidates.map( candidate => {
-                      <TableRow key={props.candidate.id}>
+                    {candidateList.map( candidate => (
+                      <TableRow key={candidate.id}>
                         <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
                         <TableCell>{candidate.party}</TableCell>
                         <TableCell>{candidate.office}</TableCell>
                         <TableCell>{candidate.contribution}</TableCell>
                       </TableRow>
-                    })}
+                    ))}
                 </TableBody>
             </Table>
           <br></br>

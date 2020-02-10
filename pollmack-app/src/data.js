@@ -1,6 +1,6 @@
 // exports.data = [
 
-export const candidates = [
+export const candidateList = [
     {
         id: 1,
         name: 'Dan Crenshaw',
