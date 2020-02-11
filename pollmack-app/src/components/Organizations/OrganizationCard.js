@@ -52,6 +52,7 @@ const OrganizationCard = (props) => {
         <Grommet theme={grommet}>
             <Box style={styleCard} align='center' key={props.id}>
                 <Box style={styleCardContent} align='center'>
+                    <img src={props.photoUrl} alt='candidate'/>
                     <Paragraph style={styleCardTitle}>{props.name}</Paragraph>
                     <Paragraph style={styleLocationLabel}>Address: {props.address}</Paragraph>
                     <Paragraph style={styleDescription}>Party: {props.party}</Paragraph>
