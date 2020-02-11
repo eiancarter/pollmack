@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Grommet, Box, Anchor, Header, Heading, Button } from 'grommet';
+import { Grommet, Box, Anchor, Header, Heading, Button, TextInput, Form } from 'grommet';
 import { grommet } from 'grommet/themes'; 
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ const CandidateList = () => {
     const [candidates, setCandidates] = useState([]);
     useEffect(() => {
         axios
-            .get('https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo')
+            .get('https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo')
             .then(response => {
                 console.log(response);
                 setCandidates(response.data.elections);

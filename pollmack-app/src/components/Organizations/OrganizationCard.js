@@ -16,12 +16,12 @@ const styleCard = {
     cursor: "pointer"
   };
   
-//   const styleImage = {
-//     height: 120,
-//     backgroundColor: "lightGray",
-//     borderRadius: "8px 8px 0 0",
-//     overflow: "hidden"
-//   };
+  // const styleImage = {
+  //   height: 120,
+  //   backgroundColor: "lightGray",
+  //   borderRadius: "8px 8px 0 0",
+  //   overflow: "hidden"
+  // };
   
   const styleCardTitle = {
     fontFamily: "Avenir-Heavy",

@@ -8,6 +8,7 @@ import AvatarBox from './AvatarBox';
 import PostList from './PostList';
 import UserCandidates from "./CandidateRoster";
 import UserBio from './UserBio';
+import AddressForm from "./AddressForm";
 
 
 const Profile = () => (
@@ -23,6 +24,7 @@ const Profile = () => (
     </Header>
     <Box>
         <AvatarBox />
+        <AddressForm />
         <FundBox />
         <UserCandidates />
     </Box>
