@@ -55,20 +55,12 @@ const OrganizationCard = (props) => {
                     <img src={props.photoUrl} alt='candidate'/>
                     <Paragraph style={styleCardTitle}>{props.name}</Paragraph>
                     <Paragraph style={styleLocationLabel}>Address: {props.address}</Paragraph>
-                    <Paragraph style={styleDescription}>Party: {props.party}</Paragraph>
-                    <Paragraph style={styleDescription}>Contact: {props.phones}, {props.state}</Paragraph>    
+                    <Paragraph style={styleDescription}>{props.party}</Paragraph>
+                    <Paragraph style={styleDescription}>Contact: {props.phones}</Paragraph>    
                     <Paragraph style={styleDescription}>Website: {props.urls}</Paragraph>    
                     {/* <Paragraph style={styleDescription}>Status: {props.channels}</Paragraph>     */}
                 </Box>
             </Box>
-            {/* <Heading>Social Organizations</Heading>
-            <Box align='center'>
-                <Box border='all' align='center'>
-                    <Heading>Organization Name</Heading>
-                    <Heading>Member Since</Heading>
-                    <Paragraph>Total Donations</Paragraph>
-                </Box>
-            </Box> */}
         </Grommet>
     )
 };

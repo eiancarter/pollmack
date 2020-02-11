@@ -46,7 +46,7 @@ const CandidateList = () => {
                         office={candidate.phones} 
                         district={candidate.urls} 
                         // state={candidate.channels} 
-                        status={candidate.address}
+                        status={candidate.address.line1}
                         />
                     )
                 })}
