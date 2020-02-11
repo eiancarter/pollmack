@@ -5,34 +5,34 @@ export const candidateList = [
         id: 1,
         name: 'Dan Crenshaw',
         party: 'Republican',
-        office: 'President',
+        office: 'Represenative',
         contribution: '$20.00'
     },
     {
         id: 1,
-        name: 'Dan Crenshaw',
+        name: 'Nany Pelosi',
+        party: 'Democart',
+        office: 'Senator',
+        contribution: '$20.00'
+    },
+    {
+        id: 1,
+        name: 'Donald Trump',
         party: 'Republican',
         office: 'President',
         contribution: '$20.00'
     },
     {
         id: 1,
-        name: 'Dan Crenshaw',
-        party: 'Republican',
+        name: 'Tulsi Gabbard',
+        party: 'Democrat',
         office: 'President',
         contribution: '$20.00'
     },
     {
         id: 1,
-        name: 'Dan Crenshaw',
-        party: 'Republican',
-        office: 'President',
-        contribution: '$20.00'
-    },
-    {
-        id: 1,
-        name: 'Dan Crenshaw',
-        party: 'Republican',
+        name: 'Bernie Sanders',
+        party: 'Democrat',
         office: 'President',
         contribution: '$20.00'
     }
