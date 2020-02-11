@@ -11,11 +11,12 @@ const CandidateList = () => {
     //AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo = API Key
     const [candidates, setCandidates] = useState([]);
     useEffect(() => {
+        const address = 'USA'
         axios
-            .get('https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo')
+            .get('https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo&address=1263%20Pacific%20Ave.%20Kansas%20City%20KS"', address)
             .then(response => {
                 console.log(response);
-                setCandidates(response.data.elections);
+                setCandidates(response.data.officials);
             })
             .catch (error => {
                 console.log('No Candidates Found', error);
@@ -40,11 +41,12 @@ const CandidateList = () => {
                         <OrganizationCard 
                         key={candidate.id} 
                         name={candidate.name} 
-                        party={candidate.party_full} 
-                        office={candidate.office_full} 
-                        district={candidate.district} 
-                        state={candidate.state} 
-                        status={candidate.candidate_status}/>
+                        party={candidate.party} 
+                        office={candidate.phones} 
+                        district={candidate.urls} 
+                        // state={candidate.channels} 
+                        status={candidate.address}
+                        />
                     )
                 })}
             </Box>
