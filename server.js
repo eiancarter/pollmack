@@ -9,7 +9,7 @@ server.use("/api/projects", projectRouter);
 server.use("/api/actions", actionRouter);
 
 server.get("/", (req, res) => {
-    res.send(`<h2>This is my sprint project!</h2>`);
+    res.send(`<h2>Welcome to Pollmack!</h2>`);
 })
 
 

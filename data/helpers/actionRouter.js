@@ -1,49 +1,49 @@
 const express = require("express");
-const Actions = require("./actionModel");
+const Contributions = require("./contributionModel");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    Actions.get()
-        .then(actions => {
-            res.status(200).json(actions)
+    Contributions.get()
+        .then(contributions => {
+            res.status(200).json(contributions)
         })
         .catch(error => {
             console.log(error)
-            res.status(500).json({ message: "error retrieving actions" })
+            res.status(500).json({ message: "error retrieving contributions" })
         })
 });
 
 router.get("/:id", (req, res) => {
-    Actions.get(req.params.id)
-        .then(action => {
-            if(action) {
-                res.status(200).json(action);
+    Contributions.get(req.params.id)
+        .then(contribution => {
+            if(contribution) {
+                res.status(200).json(contribution);
             } else {
-                res.status(404).json({ message: "action not found" })
+                res.status(404).json({ message: "contribution not found" })
             }
         })
         .catch(error => {
             console.log(error);
             res.status(500).json({
-                message: "error retrieving that action"
+                message: "error retrieving that contribution"
             })
         })
 });
 
 router.post('/:id', (req, res) => {
-    const newAction = req.body;
-    actions.insert(newAction)
+    const newContribution = req.body;
+    contributions.insert(newContribution)
       .then(() => res.status(201))
       .catch(err => console.log(err));
 });
 
 router.delete("/:id", (req, res) => {
-    Actions.remove(req.params.id)
+    Contributions.remove(req.params.id)
         .then(count => {
             if(count > 0) {
-                res.status(200).json({ message: "the action is gone" })
+                res.status(200).json({ message: "contribution deleted" })
             } else {
-                res.status(404).json({ message: "cannot delete action" })
+                res.status(404).json({ message: "cannot delete contribution" })
             }
         })
         .catch(error => {
@@ -54,12 +54,12 @@ router.delete("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
     const changes = req.body;
-    Actions.update(req.params.id, changes)
-        .then(action => {
-            if(action) {
+    Contributions.update(req.params.id, changes)
+        .then(contribution => {
+            if(contribution) {
                 res.status(200).json(action);
             } else {
-                res.status(404).json({ message: "the action cannot be changed" })
+                res.status(404).json({ message: "the contribution cannot be changed" })
             }
         })
         .catch(error => {

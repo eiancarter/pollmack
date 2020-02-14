@@ -1,7 +1,7 @@
 const express = require("express");
 const Projects = require("./projectModel");
 const router = express.Router();
-const Actions = require("./actionModel");
+const Actions = require("./contributionModel");
 
 //this one needs middleware to confirm project_id exists
 
