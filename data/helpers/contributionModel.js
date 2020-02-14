@@ -9,41 +9,41 @@ module.exports = {
 };
 
 function get(id) {
-  let query = db("actions");
+  let query = db("contributions");
 
   if (id) {
     return query
       .where("id", id)
       .first()
-      .then(action => {
-        if (action) {
-          return mappers.actionToBody(action);
+      .then(contribution => {
+        if (contribution) {
+          return mappers.actionToBody(contribution);
         } else {
           return null;
         }
       });
   } else {
-    return query.then(actions => {
-      return actions.map(action => mappers.actionToBody(action));
+    return query.then(contributions => {
+      return contributions.map(action => mappers.actionToBody(contribution));
     });
   }
 }
 
-function insert(action) {
-  return db("actions")
-    .insert(action)
+function insert(contribution) {
+  return db("contributions")
+    .insert(contribution)
     .then(([id]) => get(id));
 }
 
 function update(id, changes) {
-  return db("actions")
+  return db("contributions")
     .where("id", id)
     .update(changes)
     .then(count => (count > 0 ? get(id) : null));
 }
 
 function remove(id) {
-  return db("actions")
+  return db("contributions")
     .where("id", id)
     .del();
 }
