@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function get(id) {
-  let query = db("projects as p");
+  let query = db("candidates as p");
 
   if (id) {
     query.where("p.id", id).first();
@@ -18,44 +18,44 @@ function get(id) {
     const promises = [query, getProjectActions(id)]; // [ projects, actions ]
 
     return Promise.all(promises).then(function(results) {
-      let [project, actions] = results;
+      let [candidate, actions] = results;
 
-      if (project) {
-        project.actions = actions;
+      if (candidate) {
+        candidate.contributions = contributions;
 
-        return mappers.projectToBody(project);
+        return mappers.projectToBody(candidate);
       } else {
         return null;
       }
     });
   } else {
-    return query.then(projects => {
-      return projects.map(project => mappers.projectToBody(project));
+    return query.then(candidates => {
+      return candidates.map(candidate => mappers.projectToBody(candidate));
     });
   }
 }
 
-function insert(project) {
-  return db("projects")
-    .insert(project, "id")
+function insert(candidate) {
+  return db("candidates")
+    .insert(candidate, "id")
     .then(([id]) => get(id));
 }
 
 function update(id, changes) {
-  return db("projects")
+  return db("candidates")
     .where("id", id)
     .update(changes)
     .then(count => (count > 0 ? get(id) : null));
 }
 
 function remove(id) {
-  return db("projects")
+  return db("candidates")
     .where("id", id)
     .del();
 }
 
-function getProjectActions(projectId) {
-  return db("actions")
-    .where("project_id", projectId)
-    .then(actions => actions.map(action => mappers.actionToBody(action)));
+function getProjectActions(candidateId) {
+  return db("candidates")
+    .where("candidate_id", candidateId)
+    .then(contributions => contributions.map(contribution => mappers.actionToBody(contribution)));
 }

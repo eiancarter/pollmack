@@ -24,7 +24,7 @@ function get(id) {
       });
   } else {
     return query.then(contributions => {
-      return contributions.map(action => mappers.actionToBody(contribution));
+      return contributions.map(contribution => mappers.actionToBody(contribution));
     });
   }
 }

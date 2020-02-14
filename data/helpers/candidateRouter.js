@@ -1,5 +1,5 @@
 const express = require("express");
-const Projects = require("./projectModel");
+const Projects = require("./candidateModel");
 const router = express.Router();
 const Actions = require("./contributionModel");
 
