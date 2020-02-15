@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
 
 router.post('/:id', (req, res) => {
     const newContribution = req.body;
-    contributions.insert(newContribution)
+    Contributions.insert(newContribution)
       .then(() => res.status(201))
       .catch(err => console.log(err));
 });
@@ -57,7 +57,7 @@ router.put("/:id", (req, res) => {
     Contributions.update(req.params.id, changes)
         .then(contribution => {
             if(contribution) {
-                res.status(200).json(action);
+                res.status(200).json(contribution);
             } else {
                 res.status(404).json({ message: "the contribution cannot be changed" })
             }
