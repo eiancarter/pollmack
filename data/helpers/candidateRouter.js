@@ -1,121 +1,121 @@
 const express = require("express");
-const Projects = require("./candidateModel");
+const Candidates = require("./candidateModel");
 const router = express.Router();
-const Actions = require("./contributionModel");
+const Contributions = require("./contributionModel");
 
 //this one needs middleware to confirm project_id exists
 
 //Posting a new project
-router.post("/", validateProject, (req, res) => {
-    Projects.insert(req.body)
-        .then(project => {
-            res.status(201).json(project)
+router.post("/", validateCandidate, (req, res) => {
+    Candidates.insert(req.body)
+        .then(candidate => {
+            res.status(201).json(candidate)
         })
         .catch(error => {
             console.log(error);
-            res.status(500).json({ message: "error posting project" })
+            res.status(500).json({ message: "error posting candidate" })
         })
 });
 
 //adding an action to a project
-router.post("/:id/actions", (req, res) => {
-    const actionInfo = {...req.body, project_id: req.params.id };
-    Projects.insert(actionInfo)
-        .then(action => {
-            res.status(201).json(action);
+router.post("/:id/contributions", (req, res) => {
+    const contributionInfo = {...req.body, candidate_id: req.params.id };
+    Candidates.insert(contributionInfo)
+        .then(contribution => {
+            res.status(201).json(contribution);
         })
         .catch(error => {
             console.log(error);
             res.status(500).json({
-                message: "error adding action to project"
+                message: "error adding contribution to candidate"
             });
         });
 });
 
 router.get("/", (req, res) => {
     console.log("headers", req.headers);
-    Projects.get()
-        .then(projects => {
-            res.status(200).json(projects);
+    Candidates.get()
+        .then(candidates => {
+            res.status(200).json(candidates);
         })
         .catch(error => {
             console.log(error);
-            res.status(500).json({ message: "error retrieving projects" })
+            res.status(500).json({ message: "error retrieving candidates" })
         });
 });
 
 router.get("/:id", (req, res) => {
-    Projects.get(req.params.id)
-        .then(project => {
-            res.status(200).json(project);
+    Candidates.get(req.params.id)
+        .then(candidate => {
+            res.status(200).json(candidate);
         })
         .catch(error => {
             console.log(error);
         })
 });
 
-router.get("/:id/actions", (req, res) => {
-    Projects.getProjectActions(req.params.id)
-        .then(actions => {
-            res.status(200).json(actions);
+router.get("/:id/contributions", (req, res) => {
+    Candidates.getProjectActions(req.params.id)
+        .then(contributions => {
+            res.status(200).json(contributions);
         })
         .catch(error => {
             console.log(error);
             res.status(500).json({
-                message: "error getting actions form projects"
+                message: "error getting contributions from candidates"
             })
         })
 })
 
-router.delete("/:id", validateProjectId, (req, res) => {
-    Projects.remove(req.params.id)
+router.delete("/:id", validateCandidateId, (req, res) => {
+    Candidates.remove(req.params.id)
         .then(count => {
             if(count > 0) {
-                res.status(200).json({ message: "the project has been deleted" });
+                res.status(200).json({ message: "the candidate has been deleted" });
             } else {
-                res.status(404).json({ message: "project cannot be found" });
+                res.status(404).json({ message: "candidate cannot be found" });
             }
         })
         .catch(error => {
             console.log(error);
-            res.status(500).json({ message: "error removing project" })
+            res.status(500).json({ message: "error removing candidate" })
         });
 });
 
 router.put("/:id", (req, res) => {
     const changes = req.body;
-    Projects.update(req.params.id, changes)
-        .then( project => {
-            res.status(200).json(project);
+    Candidates.update(req.params.id, changes)
+        .then(candidate => {
+            res.status(200).json(candidate);
         })
         .catch(error => {
             console.log(error);
-            res.status(500).json({ message: "error updating project" })
+            res.status(500).json({ message: "error updating candidate" })
         });
 });
 
-function validateProjectId(req, res, next) {
-    Projects.get(req.params.id)
-    .then(project => {
-      if(project) {
-        req.project = project;
+function validateCandidateId(req, res, next) {
+    Candidates.get(req.params.id)
+    .then(candidate => {
+      if(candidate) {
+        req.candidate = candidate;
         next();
       } else {
-        res.status(400).json({ message: "invalid project id" });
+        res.status(400).json({ message: "invalid candidate id" });
       }
     })
     .catch(error => {
       console.log(error)
-      res.status(500).json({ message: "error retrieving that project id" })
+      res.status(500).json({ message: "error retrieving candidate id" })
     })
 }
 
-function validateProject(req, res, next) {
+function validateCandidate(req, res, next) {
     const body = req.body;
     if (body && body.name) {
       next();
     } else if (!body) {
-      res.status(400).json({ message: "missing project data"})
+      res.status(400).json({ message: "missing candidate data"})
     } else {
       res.status(400).json({ message: "missing name or description field"})
     }
