@@ -1,22 +1,22 @@
 exports.up = function(knex) {
-    return knex.schema.createTable("actions", function(actions) {
-        actions.increments();
+    return knex.schema.createTable("contributions", function(contributions) {
+        contributions.increments();
 
-        actions
-            .integer("project_id")
+        contributions
+            .integer("candidate_id")
             .unsigned()
             .notNullable()
             .references("id")
-            .inTable("projects")
+            .inTable("candidates")
             .onDelete("CASCADE")
             .onUpdate("CASCADE");
 
-        actions.string("description", 128).notNullable();
-        actions.text("notes").notNullable();
-        actions.boolean("completed").defaultTo(false);
+        contributions.string("description", 128).notNullable();
+        contributions.text("notes").notNullable();
+        contributions.boolean("completed").defaultTo(false);
     });
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTableIfExists("actions");
+    return knex.schema.dropTableIfExists("contributions");
 };

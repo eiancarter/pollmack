@@ -1,13 +1,13 @@
 exports.up = function(knex) {
-    return knex.schema.createTable("projects", function(projects) {
-        projects.increments();
+    return knex.schema.createTable("candidates", function(candidates) {
+        candidates.increments();
 
-        projects.string("name", 128).notNullable();
-        projects.text("description").notNullable();
-        projects.boolean("completed").defaultTo(false);
+        candidates.string("name", 128).notNullable();
+        candidates.text("description").notNullable();
+        candidates.boolean("completed").defaultTo(false);
     });
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTableIfExists("projects");
+    return knex.schema.dropTableIfExists("candidates");
 };
