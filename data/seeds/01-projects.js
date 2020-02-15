@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  return knex('projects').insert([
+  return knex('candidates').insert([
     {
       name: 'Dan Crenshaw',
       description:
