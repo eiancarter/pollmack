@@ -9,19 +9,19 @@ const styleCard = {
     borderRadius: "8px",
     color: "#253B56",
     height: "200px",
-    width: "200px",
+    width: "450px",
     position: "relative",
     display: "inline-block",
     overflow: "hidden",
     cursor: "pointer"
   };
   
-//   const styleImage = {
-//     height: 120,
-//     backgroundColor: "lightGray",
-//     borderRadius: "8px 8px 0 0",
-//     overflow: "hidden"
-//   };
+  // const styleImage = {
+  //   height: 120,
+  //   backgroundColor: "lightGray",
+  //   borderRadius: "8px 8px 0 0",
+  //   overflow: "hidden"
+  // };
   
   const styleCardTitle = {
     fontFamily: "Avenir-Heavy",
@@ -43,7 +43,7 @@ const styleCard = {
   };
   
   const styleCardContent = {
-    padding: "4px 16px 20px 16px"
+    padding: "4px 16px 20px 16px",
   };
 
 
@@ -52,21 +52,15 @@ const OrganizationCard = (props) => {
         <Grommet theme={grommet}>
             <Box style={styleCard} align='center' key={props.id}>
                 <Box style={styleCardContent} align='center'>
+                    <img src={props.photoUrl} alt='candidate'/>
                     <Paragraph style={styleCardTitle}>{props.name}</Paragraph>
-                    <Paragraph style={styleLocationLabel}>Party: {props.party}</Paragraph>
-                    <Paragraph style={styleDescription}>Office: {props.office}</Paragraph>
-                    <Paragraph style={styleDescription}>District: {props.district}, {props.state}</Paragraph>    
-                    <Paragraph style={styleDescription}>Status: {props.status}</Paragraph>    
+                    <Paragraph style={styleLocationLabel}>Address: {props.address}</Paragraph>
+                    <Paragraph style={styleDescription}>{props.party}</Paragraph>
+                    <Paragraph style={styleDescription}>Contact: {props.phones}</Paragraph>    
+                    <Paragraph style={styleDescription}>Website: {props.urls}</Paragraph>    
+                    {/* <Paragraph style={styleDescription}>Status: {props.channels}</Paragraph>     */}
                 </Box>
             </Box>
-            {/* <Heading>Social Organizations</Heading>
-            <Box align='center'>
-                <Box border='all' align='center'>
-                    <Heading>Organization Name</Heading>
-                    <Heading>Member Since</Heading>
-                    <Paragraph>Total Donations</Paragraph>
-                </Box>
-            </Box> */}
         </Grommet>
     )
 };

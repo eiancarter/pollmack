@@ -4,7 +4,7 @@ import { Grommet } from 'grommet';
 
 import Home from './components/Home/Home.js';
 import Profile from './components/Profile/Profile';
-import OrganizationsList from './components/Organizations/OrganizationList';
+import CandidateList from './components/Organizations/CandidateList';
 
 const theme = {
   global: {
@@ -27,11 +27,8 @@ function App() {
           <Route exact path='/profile'>
             <Profile />
           </Route>
-          <Route exact path='/profile/organizations'>
-            <OrganizationsList />
-          </Route>
-          <Route exact path='/profile/organizations/:id'>
-            {/* <OrganizationCard /> */}
+          <Route exact path='/profile/candidates'>
+            <CandidateList />
           </Route>
         </Switch>
       </header>
