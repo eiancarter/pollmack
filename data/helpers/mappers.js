@@ -13,25 +13,25 @@ function booleanToint(bool) {
   return bool === true ? 1 : 0;
 }
 
-function projectToBody(project) {
+function projectToBody(candidate) {
   const result = {
-    ...project,
-    completed: intToBoolean(project.completed),
+    ...candidate,
+    completed: intToBoolean(candidate.completed),
   };
 
-  if (project.actions) {
-    result.actions = project.actions.map(action => ({
-      ...action,
-      completed: intToBoolean(action.completed),
+  if (candidate.contributions) {
+    result.contributions = candidate.contributions.map(contribution => ({
+      ...contribution,
+      completed: intToBoolean(contribution.completed),
     }));
   }
 
   return result;
 }
 
-function actionToBody(action) {
+function actionToBody(contribution) {
   return {
-    ...action,
-    completed: intToBoolean(action.completed),
+    ...contribution,
+    completed: intToBoolean(contribution.completed),
   };
 }
