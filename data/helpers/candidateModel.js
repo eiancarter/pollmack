@@ -18,7 +18,7 @@ function get(id) {
     const promises = [query, getProjectActions(id)]; // [ projects, actions ]
 
     return Promise.all(promises).then(function(results) {
-      let [candidate, actions] = results;
+      let [candidate, contributions] = results;
 
       if (candidate) {
         candidate.contributions = contributions;

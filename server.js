@@ -1,8 +1,8 @@
 const express = require("express");
 const server = express();
 
-const projectRouter = require("./data/helpers/candidateRouter");
-const actionRouter = require("./data/helpers/contributionRouter");
+const candidateRouter = require("./data/helpers/candidateRouter");
+const contributionRouter = require("./data/helpers/contributionRouter");
 
 server.use(express.json());
 server.use("/api/candidates", candidateRouter);
