@@ -11,7 +11,7 @@ const styleCard = {
     boxShadow: "0px 0px 8px #ccc",
     borderRadius: "8px",
     color: "#253B56",
-    height: "200px",
+    height: "280px",
     width: "450px",
     position: "relative",
     display: "inline-block",
@@ -88,18 +88,18 @@ const CandidateList = () => {
             </Box>
             <Heading>Congressional Candidates</Heading>
             <Button>Filter</Button>
-            <Box overflow="hidden" direction="row" gap="small">
+            <Box direction="row" gap="small">
                 {candidates.map(candidate => {
                     return (
-                        <OrganizationCard 
-                        key={candidate.id} 
-                        name={candidate.name} 
-                        party={candidate.party} 
-                        office={candidate.phones} 
-                        district={candidate.urls} 
-                        // state={candidate.channels} 
-                        status={candidate.address}
-                        />
+                        <Box style={styleCard} align='center' key={candidate.id}>
+                            <Box style={styleCardContent} key={candidate.id} align='center'>
+                                <img style={styleImage} src={candidate.photoUrl} alt='candidate'/>
+                                <Paragraph style={styleCardTitle}>{candidate.name}</Paragraph>
+                                <Paragraph style={styleDescription}>{candidate.party}</Paragraph>
+                                <Paragraph style={styleDescription}>Contact: {candidate.phones}</Paragraph>    
+                                <Paragraph style={styleDescription}>Website: {candidate.urls}</Paragraph> 
+                            </Box>
+                        </Box>
                     )
                 })}
             </Box>
