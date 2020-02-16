@@ -1,8 +1,6 @@
 import React from "react";
-
 import { Grommet, Box, Text, Button } from "grommet";
 import { grommet } from "grommet/themes";
-
 
 
 const FundBox = () => (
@@ -18,10 +16,11 @@ const FundBox = () => (
       <Text>Balance: $20</Text>
       <br></br>
       <Box
+          direction='row'
         >
-        <Button>Add Funds</Button>
+        <Button type='submit' label='Add' primary={true} />
         <br></br>
-        <Button>Edit Payments</Button>
+        <Button type='submit' label='Payments' primary={true} />
       </Box>
     </Box>
   </Grommet>

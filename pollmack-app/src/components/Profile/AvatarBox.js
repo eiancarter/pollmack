@@ -5,7 +5,7 @@ import Avatar from './ProfileAvatar';
 
 const AvatarBox = () => {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Box>
             <Box
                 width='medium'
