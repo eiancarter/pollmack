@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { Grommet, Box, Anchor, Header, Heading, Button, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes'; 
 import axios from 'axios';
-
-import OrganizationCard from './OrganizationCard';
 import ProfileAvatar from '../Profile/ProfileAvatar';
 
 const styleCard = {

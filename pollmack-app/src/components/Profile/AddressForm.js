@@ -1,29 +1,34 @@
 import React from 'react';
-import { Grommet, Form, TextInput, Heading, Button } from 'grommet';
+import { Grommet, Form, FormField, Heading, Button } from 'grommet';
 
 
 const AddressForm = () => {
     return (
         <Grommet>
             <Heading>Enter Address</Heading>
-            <Form>
-                <TextInput 
-                    placeholder='address 1'
+            <Form onSubmit={({ value }) => console.log('Submit: ', value)} size='small'>
+                <FormField 
+                    label='Address 1'
+                    name='address 1'
                 />
-                <TextInput
-                    placeholder='address 2'
+                <FormField
+                    label='Address 2'
+                    name='address 2'
                 />
-                <TextInput 
-                    placeholder='city'
+                <FormField
+                    label='City'
+                    name='city'
                 />
-                <TextInput 
-                    placeholder='state'
+                <FormField
+                    label='State'
+                    name='state'
                 />
-                <TextInput 
-                    placeholder='ZIP'
+                <FormField
+                    label='Zip'
+                    name='ZIP'
                 />
             </Form>
-            <Button>Submit</Button>
+            <Button type='submit' label='Submit' primary={true} />
         </Grommet>
     )
 }
