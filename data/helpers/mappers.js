@@ -1,8 +1,8 @@
 module.exports = {
   intToBoolean,
   booleanToint,
-  projectToBody,
-  actionToBody,
+  candidateToBody,
+  contributionToBody,
 };
 
 function intToBoolean(int) {
@@ -13,7 +13,7 @@ function booleanToint(bool) {
   return bool === true ? 1 : 0;
 }
 
-function projectToBody(candidate) {
+function candidateToBody(candidate) {
   const result = {
     ...candidate,
     completed: intToBoolean(candidate.completed),
@@ -29,7 +29,7 @@ function projectToBody(candidate) {
   return result;
 }
 
-function actionToBody(contribution) {
+function contributionToBody(contribution) {
   return {
     ...contribution,
     completed: intToBoolean(contribution.completed),

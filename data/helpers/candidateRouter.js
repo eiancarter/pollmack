@@ -19,8 +19,7 @@ router.post("/", (req, res) => {
 
 //adding a contribution to a candidate
 router.post("/:id/contributions", (req, res) => {
-    // const contributionInfo = {...req.body, candidate_id: req.params.id };
-    const contributionInfo = {...req.body };
+    const contributionInfo = {...req.body, candidate_id: req.params.id };
     Candidates.insert(contributionInfo)
         .then(contribution => {
             res.status(201).json(contribution);
@@ -56,7 +55,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.get("/:id/contributions", (req, res) => {
-    Candidates.getProjectActions(req.params.id)
+    Candidates.getCandidateActions(req.params.id)
         .then(contributions => {
             res.status(200).json(contributions);
         })
