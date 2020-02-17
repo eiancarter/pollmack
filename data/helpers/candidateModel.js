@@ -10,10 +10,10 @@ module.exports = {
 };
 
 function get(id) {
-  let query = db("candidates as p");
+  let query = db("candidates as c");
 
   if (id) {
-    query.where("p.id", id).first();
+    query.where("c.id", id).first();
 
     const promises = [query, getProjectActions(id)]; // [ projects, actions ]
 

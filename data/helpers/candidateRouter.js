@@ -3,10 +3,10 @@ const Candidates = require("./candidateModel");
 const router = express.Router();
 const Contributions = require("./contributionModel");
 
-//this one needs middleware to confirm project_id exists
+//this one needs middleware to confirm candidate exists
 
-//Posting a new project
-router.post("/", validateCandidate, (req, res) => {
+//Posting a new candidate
+router.post("/", (req, res) => {
     Candidates.insert(req.body)
         .then(candidate => {
             res.status(201).json(candidate)
@@ -17,9 +17,10 @@ router.post("/", validateCandidate, (req, res) => {
         })
 });
 
-//adding an action to a project
+//adding a contribution to a candidate
 router.post("/:id/contributions", (req, res) => {
-    const contributionInfo = {...req.body, candidate_id: req.params.id };
+    // const contributionInfo = {...req.body, candidate_id: req.params.id };
+    const contributionInfo = {...req.body };
     Candidates.insert(contributionInfo)
         .then(contribution => {
             res.status(201).json(contribution);
@@ -67,7 +68,7 @@ router.get("/:id/contributions", (req, res) => {
         })
 })
 
-router.delete("/:id", validateCandidateId, (req, res) => {
+router.delete("/:id", (req, res) => {
     Candidates.remove(req.params.id)
         .then(count => {
             if(count > 0) {
