@@ -17,14 +17,14 @@ function get(id) {
       .first()
       .then(contribution => {
         if (contribution) {
-          return mappers.actionToBody(contribution);
+          return mappers.contributionToBody(contribution);
         } else {
           return null;
         }
       });
   } else {
     return query.then(contributions => {
-      return contributions.map(contribution => mappers.actionToBody(contribution));
+      return contributions.map(contribution => mappers.contributionToBody(contribution));
     });
   }
 }

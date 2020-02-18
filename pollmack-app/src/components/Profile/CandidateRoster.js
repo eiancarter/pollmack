@@ -2,25 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
 import { grommet } from "grommet/themes";
 import axios from 'axios';
-import { candidateList } from '../../data';
+import ContributionForm from './ContributionForm';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+// import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
   const [candidates, setCandidates] = useState([]);
-  
-    useEffect( () => {
-      setCandidates(candidateList);
-    }, [])
-    // useEffect(() => {
-    //   axios
-    //       .get('https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo')
-    //       .then(response => {
-    //           console.log(response);
-    //           setCandidates(response.data.elections);
-    //       })
-    //       .catch (error => {
-    //           console.log('No Candidates Found', error);
-    //       })
-    // }, []);
+  const [modalShow, setModalShow] = useState(false);
+    useEffect(() => {
+      axios
+          .get('http://localhost:5600/api/candidates')
+          .then(response => {
+              console.log(response);
+              setCandidates(response.data);
+          })
+          .catch (error => {
+              console.log('No Candidates Found', error);
+          })
+    }, [setCandidates]);
     return (
         <Grommet theme={grommet}>
         <Box
@@ -46,19 +45,24 @@ const CandidateRoster = props => {
                   <TableCell scope="col" border="bottom">
                       Office
                   </TableCell>
-                  <TableCell scope="col" border="bottom">
-                      Contributed
-                  </TableCell>
                   </TableRow>
               </TableHeader>
               <TableBody>
                 {/* <TableRow><TableCell>hello</TableCell></TableRow> */}
-                  {candidateList.map( candidate => (
+                  {candidates.map( candidate => (
                     <TableRow key={candidate.id}>
                       <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
                       <TableCell>{candidate.party}</TableCell>
                       <TableCell>{candidate.office}</TableCell>
-                      <TableCell>{candidate.contribution}</TableCell>
+                      <ButtonToolbar>
+                        <button variant='primary' onClick={()=> setModalShow(true)}>
+                          Contribute
+                        </button>
+                        <ContributionForm 
+                          show={modalShow}
+                          onHide={()=> setModalShow(false)}
+                        />
+                      </ButtonToolbar>
                     </TableRow>
                   ))}
               </TableBody>

@@ -1,4 +1,4 @@
-const db = require("../dbConfig.js");
+const db = require("../dbConfig");
 const mappers = require("./mappers");
 
 module.exports = {
@@ -6,7 +6,7 @@ module.exports = {
   insert,
   update,
   remove,
-  getProjectActions,
+  getCandidateActions,
 };
 
 function get(id) {
@@ -15,7 +15,7 @@ function get(id) {
   if (id) {
     query.where("c.id", id).first();
 
-    const promises = [query, getProjectActions(id)]; // [ projects, actions ]
+    const promises = [query, getCandidateActions(id)]; // [ projects, actions ]
 
     return Promise.all(promises).then(function(results) {
       let [candidate, contributions] = results;
@@ -23,14 +23,14 @@ function get(id) {
       if (candidate) {
         candidate.contributions = contributions;
 
-        return mappers.projectToBody(candidate);
+        return mappers.candidateToBody(candidate);
       } else {
         return null;
       }
     });
   } else {
     return query.then(candidates => {
-      return candidates.map(candidate => mappers.projectToBody(candidate));
+      return candidates.map(candidate => mappers.candidateToBody(candidate));
     });
   }
 }
@@ -54,8 +54,8 @@ function remove(id) {
     .del();
 }
 
-function getProjectActions(candidateId) {
-  return db("candidates")
+function getCandidateActions(candidateId) {
+  return db("contributions")
     .where("candidate_id", candidateId)
-    .then(contributions => contributions.map(contribution => mappers.actionToBody(contribution)));
+    .then(contributions => contributions.map(contribution => mappers.candidateToBody(contribution)));
 }
