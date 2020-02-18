@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
 import { grommet } from "grommet/themes";
 import axios from 'axios';
+import ContributionForm from './ContributionForm';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 // import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
   const [candidates, setCandidates] = useState([]);
-  
-    // useEffect( () => {
-    //   setCandidates(candidateList);
-    // }, [])
+  const [modalShow, setModalShow] = useState(false);
     useEffect(() => {
       axios
           .get('http://localhost:5600/api/candidates')
@@ -41,10 +40,10 @@ const CandidateRoster = props => {
                       Name
                   </TableCell>
                   <TableCell scope="col" border="bottom">
-                      Notes
+                      Party
                   </TableCell>
                   <TableCell scope="col" border="bottom">
-                      Total Contributed
+                      Office
                   </TableCell>
                   </TableRow>
               </TableHeader>
@@ -53,9 +52,17 @@ const CandidateRoster = props => {
                   {candidates.map( candidate => (
                     <TableRow key={candidate.id}>
                       <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
-                      <TableCell>{candidate.description}</TableCell>
+                      <TableCell>{candidate.party}</TableCell>
                       <TableCell>{candidate.office}</TableCell>
-                      {/* <TableCell>{candidate.completed}</TableCell> */}
+                      <ButtonToolbar>
+                        <button variant='primary' onClick={()=> setModalShow(true)}>
+                          Contribute
+                        </button>
+                        <ContributionForm 
+                          show={modalShow}
+                          onHide={()=> setModalShow(false)}
+                        />
+                      </ButtonToolbar>
                     </TableRow>
                   ))}
               </TableBody>
