@@ -3,9 +3,9 @@ exports.seed = function(knex, Promise) {
     {
       name: 'Dan Crenshaw',
       party:
-        'Current Republican House Representative and former Navy Seal',
+        'Republican',
       office:
-        'Current Republican House Representative and former Navy Seal',
+        'House of Representatives',
     },
   ]);
 };
