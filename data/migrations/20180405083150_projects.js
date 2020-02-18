@@ -3,7 +3,8 @@ exports.up = function(knex) {
         candidates.increments();
 
         candidates.string('name', 128).notNullable();
-        candidates.text('description').notNullable();
+        candidates.text('party').notNullable();
+        candidates.text('office').notNullable();
         candidates.boolean('completed').defaultTo(false);
     });
 };
