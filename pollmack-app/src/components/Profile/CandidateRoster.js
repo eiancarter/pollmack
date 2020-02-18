@@ -3,12 +3,14 @@ import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Butto
 import { grommet } from "grommet/themes";
 import axios from 'axios';
 import ContributionForm from './ContributionForm';
+import CandidateForm from './CandidateForm';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 // import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
   const [candidates, setCandidates] = useState([]);
   const [modalShow, setModalShow] = useState(false);
+  const [candidateModalShow, setCandidateModalShow] = useState(false);
     useEffect(() => {
       axios
           .get('http://localhost:5600/api/candidates')
@@ -68,9 +70,15 @@ const CandidateRoster = props => {
               </TableBody>
           </Table>
           <br></br>
-          <Box>
-            <Button style={{color:'white', border:'2px solid white', padding:'6px', borderRadius:'8px'}}>Add Candidate</Button>
-          </Box>
+          <ButtonToolbar>
+            <button variant='primary' onClick={()=> setCandidateModalShow(true)}>
+              Add Candidate
+            </button>
+            <CandidateForm 
+              show={candidateModalShow}
+              onHide={()=> setCandidateModalShow(false)}
+            />
+          </ButtonToolbar>
         </Box>
       </Grommet>
     )
