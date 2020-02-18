@@ -11,7 +11,7 @@ exports.up = function(knex) {
             .onDelete('CASCADE')
             .onUpdate('CASCADE');
 
-        contributions.decimal('amount', 128).notNullable();
+        contributions.decimal('amount').notNullable();
         contributions.text('notes').notNullable();
         contributions.boolean('completed').defaultTo(false);
     });
