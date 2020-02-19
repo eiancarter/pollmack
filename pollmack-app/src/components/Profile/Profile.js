@@ -22,15 +22,14 @@ const Profile = () => (
         <ProfileAvatar />
       </Anchor>
     </Header>
-    <Box>
+    <Box style={{margin:"2% 2% 0% 2%"}} align="center" direction="row" gap="medium">
         <AvatarBox />
         <AddressForm />
-        <FundBox />
         <UserCandidates />
     </Box>
-    <Box direction="row" gap="medium">
-      <UserBio />
-      <PostList />
+    <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
+        <FundBox />
+        <PostList />
     </Box>
   </Grommet>
 );

@@ -69,7 +69,7 @@ const CandidateList = () => {
             </Header>
             <Heading>Presidential Candidates</Heading>
             <Button>Filter</Button>
-            <Box direction="row" gap="small">
+            <Box style={{ overflowX:"scroll" }} direction="row" gap="small">
                 {candidates.map(candidate => {
                     return (
                         <Box style={styleCard} align='center' key={candidate.id}>
@@ -86,7 +86,7 @@ const CandidateList = () => {
             </Box>
             <Heading>Congressional Candidates</Heading>
             <Button>Filter</Button>
-            <Box direction="row" gap="small">
+            <Box style={{ overflowX:"scroll" }} direction="row" gap="small">
                 {candidates.map(candidate => {
                     return (
                         <Box style={styleCard} align='center' key={candidate.id}>

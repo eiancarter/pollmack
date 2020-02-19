@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
+import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Header } from 'grommet';
 import { grommet } from "grommet/themes";
 import axios from 'axios';
 import ContributionForm from './ContributionForm';
+import CandidateForm from './CandidateForm';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 // import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
   const [candidates, setCandidates] = useState([]);
   const [modalShow, setModalShow] = useState(false);
+  const [candidateModalShow, setCandidateModalShow] = useState(false);
     useEffect(() => {
       axios
           .get('http://localhost:5600/api/candidates')
@@ -23,6 +25,7 @@ const CandidateRoster = props => {
     return (
         <Grommet theme={grommet}>
         <Box
+          style={{color:'white'}}
           width='large'
           height='medium'
           justify="center"
@@ -31,9 +34,10 @@ const CandidateRoster = props => {
           background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
           round="medium"
         >
+          <Header>My Candidates</Header>
           <Table
               align="center"
-              color="white">
+          >
               <TableHeader>
                   <TableRow>
                   <TableCell scope="col" border="bottom">
@@ -68,9 +72,15 @@ const CandidateRoster = props => {
               </TableBody>
           </Table>
           <br></br>
-          <Box>
-            <Button style={{color:'white', border:'2px solid white', padding:'6px', borderRadius:'8px'}}>Add Candidate</Button>
-          </Box>
+          <ButtonToolbar>
+            <button variant='primary' onClick={()=> setCandidateModalShow(true)}>
+              Add Candidate
+            </button>
+            <CandidateForm 
+              show={candidateModalShow}
+              onHide={()=> setCandidateModalShow(false)}
+            />
+          </ButtonToolbar>
         </Box>
       </Grommet>
     )
