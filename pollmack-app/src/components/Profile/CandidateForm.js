@@ -12,11 +12,11 @@ export default function ContributionForm(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Candidate Form
+            Support a New Candidate
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form style={{display:'flex', flexDirection:'column', margin:'0 auto', width:'50%'}}>
               <input 
                 placeholder='Enter Name:'
               />
@@ -26,7 +26,7 @@ export default function ContributionForm(props) {
               <input 
                 placeholder='Enter Office:'
               />
-              <button>Submit</button>
+              <Button>Submit</Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>

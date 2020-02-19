@@ -4,7 +4,7 @@ import { grommet } from "grommet/themes";
 import axios from 'axios';
 import ContributionForm from './ContributionForm';
 import CandidateForm from './CandidateForm';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 // import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
@@ -49,6 +49,9 @@ const CandidateRoster = props => {
                   <TableCell scope="col" border="bottom">
                       Office
                   </TableCell>
+                  <TableCell scope="col" border="bottom">
+                      Total
+                  </TableCell>
                   </TableRow>
               </TableHeader>
               <TableBody>
@@ -58,10 +61,11 @@ const CandidateRoster = props => {
                       <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
                       <TableCell>{candidate.party}</TableCell>
                       <TableCell>{candidate.office}</TableCell>
+                      <TableCell>$200</TableCell>
                       <ButtonToolbar>
-                        <button variant='primary' onClick={()=> setModalShow(true)}>
+                        <Button style={{margin:'2%'}} variant='secondary' onClick={()=> setModalShow(true)}>
                           Contribute
-                        </button>
+                        </Button>
                         <ContributionForm 
                           show={modalShow}
                           onHide={()=> setModalShow(false)}
@@ -73,9 +77,9 @@ const CandidateRoster = props => {
           </Table>
           <br></br>
           <ButtonToolbar>
-            <button variant='primary' onClick={()=> setCandidateModalShow(true)}>
+            <Button variant='secondary' onClick={()=> setCandidateModalShow(true)}>
               Add Candidate
-            </button>
+            </Button>
             <CandidateForm 
               show={candidateModalShow}
               onHide={()=> setCandidateModalShow(false)}
