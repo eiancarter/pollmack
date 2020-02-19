@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 import { Grommet, Box, Heading, Text } from "grommet";
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import AddressForm from './AddressForm';
 import { grommet } from 'grommet/themes';
 import Avatar from './ProfileAvatar';
@@ -26,9 +26,9 @@ const AvatarBox = () => {
                 <Text>Total Donated: $389.00</Text>
                 <Text>Candidates Backed: 3</Text>
                 <ButtonToolbar>
-                  <button variant='primary' onClick={()=> setAddressModalShow(true)}>
+                  <Button variant='secondary' onClick={()=> setAddressModalShow(true)}>
                     Address
-                  </button>
+                  </Button>
                   <AddressForm 
                     show={addressModalShow}
                     onHide={()=> setAddressModalShow(false)}
