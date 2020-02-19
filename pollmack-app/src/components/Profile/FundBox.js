@@ -11,7 +11,8 @@ const FundBox = () => (
       justify="center"
       align="center"
       pad="large"
-      round="medium"
+      round="small"
+      style={{boxShadow:"1px 1px 3px grey"}}
     >
       <Text>Balance: $20</Text>
       <br></br>
