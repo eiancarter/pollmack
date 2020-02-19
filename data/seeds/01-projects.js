@@ -7,5 +7,26 @@ exports.seed = function(knex, Promise) {
       office:
         'House of Representatives',
     },
+    {
+      name: 'Tulsi Gabbard',
+      party:
+        'Democrat',
+      office:
+        'House of Representatives',
+    },
+    {
+      name: 'Andrew Yang',
+      party:
+        'Democrat',
+      office:
+        'None',
+    },
+    {
+      name: 'Donald Trump',
+      party:
+        'Republican',
+      office:
+        'President',
+    },
   ]);
 };

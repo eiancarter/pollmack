@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Button } from 'grommet';
+import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Header } from 'grommet';
 import { grommet } from "grommet/themes";
 import axios from 'axios';
 import ContributionForm from './ContributionForm';
@@ -25,6 +25,7 @@ const CandidateRoster = props => {
     return (
         <Grommet theme={grommet}>
         <Box
+          style={{color:'white'}}
           width='large'
           height='medium'
           justify="center"
@@ -33,9 +34,10 @@ const CandidateRoster = props => {
           background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
           round="medium"
         >
+          <Header>My Candidates</Header>
           <Table
               align="center"
-              color="white">
+          >
               <TableHeader>
                   <TableRow>
                   <TableCell scope="col" border="bottom">

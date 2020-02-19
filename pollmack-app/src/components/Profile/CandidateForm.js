@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Form } from 'react-bootstrap';
 
 
 export default function ContributionForm(props) {
@@ -16,7 +16,7 @@ export default function ContributionForm(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
+          <Form>
               <input 
                 placeholder='Enter Name:'
               />
@@ -27,7 +27,7 @@ export default function ContributionForm(props) {
                 placeholder='Enter Office:'
               />
               <button>Submit</button>
-          </form>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
