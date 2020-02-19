@@ -6,7 +6,7 @@ import ProfileAvatar from './ProfileAvatar';
 import FundBox from './FundBox';
 import AvatarBox from './AvatarBox';
 import PostList from './PostList';
-import UserCandidates from "./CandidateRoster";
+import CandidateRoster from "./CandidateRoster";
 import UserBio from './UserBio';
 import AddressForm from "./AddressForm";
 
@@ -25,12 +25,11 @@ const Profile = () => (
     <Box style={{margin:"2% 2% 0% 2%"}} align="center" direction="row" gap="medium">
         <AvatarBox />
         <AddressForm />
-        <UserCandidates />
+        <CandidateRoster />
     </Box>
-    <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
-        <FundBox />
+    {/* <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
         <PostList />
-    </Box>
+    </Box> */}
   </Grommet>
 );
 

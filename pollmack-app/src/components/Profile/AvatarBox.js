@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Grommet, Box, Heading, Text } from "grommet";
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import AddressForm from './AddressForm';
+import FundBox from './FundBox';
 import { grommet } from 'grommet/themes';
 import Avatar from './ProfileAvatar';
 
@@ -10,9 +11,8 @@ const AvatarBox = () => {
   const [addressModalShow, setAddressModalShow] = useState(false);
     return (
       <Grommet theme={grommet}>
-        <Box>
+        <Box style={{boxShadow:"1px 1px 3px grey"}}>
             <Box
-              style={{boxShadow:"1px 1px 3px grey"}}
               width='medium'
               height='medium'
               justify="center"
@@ -35,6 +35,7 @@ const AvatarBox = () => {
                   />
                 </ButtonToolbar>
             </Box>
+            <FundBox />
         </Box>
       </Grommet>
     )

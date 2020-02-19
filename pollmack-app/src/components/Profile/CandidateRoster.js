@@ -5,6 +5,7 @@ import axios from 'axios';
 import ContributionForm from './ContributionForm';
 import CandidateForm from './CandidateForm';
 import { Button, ButtonToolbar } from 'react-bootstrap';
+import PostList from './PostList';
 // import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
@@ -25,9 +26,9 @@ const CandidateRoster = props => {
     return (
         <Grommet theme={grommet}>
         <Box
-          style={{color:'white'}}
+          style={{color:'white', boxShadow:'1px 1px 3px grey' }}
           width='large'
-          height='medium'
+          height='large'
           justify="center"
           align="center"
           pad="large"
@@ -85,6 +86,9 @@ const CandidateRoster = props => {
               onHide={()=> setCandidateModalShow(false)}
             />
           </ButtonToolbar>
+          <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
+            <PostList />
+          </Box>
         </Box>
       </Grommet>
     )

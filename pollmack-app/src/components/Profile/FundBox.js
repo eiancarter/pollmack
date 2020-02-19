@@ -6,7 +6,7 @@ import { grommet } from "grommet/themes";
 const FundBox = () => (
   <Grommet theme={grommet}>
     <Box
-      width='small'
+      width='medium'
       height='medium'
       justify="center"
       align="center"
@@ -16,7 +16,7 @@ const FundBox = () => (
       <Text>Balance: $20</Text>
       <br></br>
       <Box
-          direction='row'
+          direction='column'
         >
         <Button type='submit' label='Add' primary={true} />
         <br></br>
