@@ -9,6 +9,7 @@ import PostList from './PostList';
 import CandidateRoster from "./CandidateRoster";
 import UserBio from './UserBio';
 import AddressForm from "./AddressForm";
+import NewsFeed from "./NewsFeed";
 
 
 const Profile = () => (
@@ -16,7 +17,7 @@ const Profile = () => (
     <Header background="brand" pad="small">
       <Anchor style={{color:"white"}} label="pollmack" href="/profile" />
       <Box direction="row" gap="medium">
-        <Anchor style={{color:"white"}} label="Search Candidates" href="/profile/candidates" />
+        <Anchor style={{color:"white"}} label="search candidates" href="/profile/candidates" />
       </Box>
       <Anchor href="/profile">
         <ProfileAvatar />
@@ -26,6 +27,7 @@ const Profile = () => (
         <AvatarBox />
         <AddressForm />
         <CandidateRoster />
+        <NewsFeed />
     </Box>
     {/* <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
         <PostList />
