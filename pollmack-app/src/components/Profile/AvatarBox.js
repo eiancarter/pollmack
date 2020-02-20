@@ -13,7 +13,7 @@ const AvatarBox = () => {
       <Grommet theme={grommet}>
         <Box 
           style={{boxShadow:"1px 1px 3px grey"}}
-          round="medium"
+          round="small"
           background="brand"
         >
             <Box
@@ -30,7 +30,7 @@ const AvatarBox = () => {
                 <Text>Total Donated: $389.00</Text>
                 <Text>Candidates Backed: 3</Text>
                 <ButtonToolbar>
-                  <Button variant='secondary' onClick={()=> setAddressModalShow(true)}>
+                  <Button variant='primary' onClick={()=> setAddressModalShow(true)}>
                     Address
                   </Button>
                   <AddressForm 

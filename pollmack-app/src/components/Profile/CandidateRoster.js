@@ -79,7 +79,7 @@ const CandidateRoster = props => {
           </Table>
           <br></br>
           <ButtonToolbar>
-            <Button variant='secondary' onClick={()=> setCandidateModalShow(true)}>
+            <Button variant='primary' onClick={()=> setCandidateModalShow(true)}>
               Add Candidate
             </Button>
             <CandidateForm 

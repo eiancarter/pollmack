@@ -1,4 +1,5 @@
 import React, { useReducer, useRef } from 'react';
+import { Button, Form, Card, ListGroup } from 'react-bootstrap';
 
 
 
@@ -35,35 +36,35 @@ const CreatePost = () => {
         inputRef.current.value = '';
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    align='left' 
+        <Card style={{width:"100%"}}>
+            <Form style={{widht:"90%", display:"flex", flexDirection:"column", alignContent:"center"}} onSubmit={handleSubmit}>
+                <textarea
+                    align='left'
                     ref={inputRef}
                 />
-                <button>Post+</button>
-            </form>
-            <div>
-                <ul>
+                <Button style={{width:"20%", margin:"2% auto"}}>Post+</Button>
+            </Form>
+            <Card>
+                <ListGroup>
                     {posts.map((item, index) => 
-                        <li
+                        <ListGroup.Item
                             key={item.id}
                             style={item.like ? {color: 'red'} : null}
                         >
                             {item.post}
-                            <button onClick={()=>{dispatch({type:'LIKE-POST', index})}}>
+                            <Button onClick={()=>{dispatch({type:'LIKE-POST', index})}}>
                                 Like
-                            </button>
-                            <button onClick={()=>{dispatch({type:'REMOVE-POST', index})}}>
+                            </Button>
+                            <Button onClick={()=>{dispatch({type:'REMOVE-POST', index})}}>
                                 Remove
-                            </button>
+                            </Button>
 
-                        </li>
+                        </ListGroup.Item>
                     )}
-                </ul>
-            </div>
+                </ListGroup>
+            </Card>
 
-        </div>
+        </Card>
     );
 };
 

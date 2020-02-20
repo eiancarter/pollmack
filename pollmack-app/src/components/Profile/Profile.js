@@ -13,10 +13,10 @@ import AddressForm from "./AddressForm";
 
 const Profile = () => (
   <Grommet theme={grommet}>
-    <Header background="light-4" pad="small">
-      <Anchor label="pollmack" href="/profile" />
+    <Header background="brand" pad="small">
+      <Anchor style={{color:"white"}} label="pollmack" href="/profile" />
       <Box direction="row" gap="medium">
-        <Anchor label="Search Candidates" href="/profile/candidates" />
+        <Anchor style={{color:"white"}} label="Search Candidates" href="/profile/candidates" />
       </Box>
       <Anchor href="/profile">
         <ProfileAvatar />
