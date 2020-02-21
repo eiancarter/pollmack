@@ -16,7 +16,7 @@ const NewsFeed = () => {
         .then(res => {
             console.log(res.data)
             setNews(res.data)
-        })
+        })  
         .catch(err => {
             console.log("cannot get news", err)
         })
@@ -24,12 +24,12 @@ const NewsFeed = () => {
 
     return (
         <div>
-            {news.map( post => (
+            {/* {news.map( post => (
                 <div key={post.title}>
                     <h3>{post.title}</h3>
                     <h3>{post.author}</h3>
                 </div>
-            ))}
+            ))} */}
         </div>
     )
 }

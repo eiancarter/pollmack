@@ -1,8 +1,6 @@
 import React, { useReducer, useRef } from 'react';
 import { Button, Form, Card, ListGroup } from 'react-bootstrap';
 
-
-
 const CreatePost = () => {
     const inputRef = useRef();
     const [posts, dispatch] = useReducer((state, action) => {

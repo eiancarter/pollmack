@@ -32,7 +32,6 @@ const CandidateRoster = props => {
           justify="center"
           align="center"
           pad="large"
-          // background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
           background="brand"
           round="small"
         >
@@ -57,7 +56,6 @@ const CandidateRoster = props => {
                   </TableRow>
               </TableHeader>
               <TableBody>
-                {/* <TableRow><TableCell>hello</TableCell></TableRow> */}
                   {candidates.map( candidate => (
                     <TableRow key={candidate.id}>
                       <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
