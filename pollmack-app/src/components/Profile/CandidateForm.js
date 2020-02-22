@@ -13,14 +13,16 @@ export default function ContributionForm(props) {
   })
   const handleChange = e => {
     return(
-      setNewCandidate(e.target.name)
+      setNewCandidate({...candidate, [e.target.name]: e.target.value })
     )
   }
   
   const handleSubmit = e => {
       e.preventDefault()
-      // setNewCandidate({...candidate, [e.target.name]: e.target.value})
+      props.addCandidate(candidate);
+      setNewCandidate({ name: '', party: '', office: '' })
   }
+
   return (
     <Modal
       {...props}
@@ -34,19 +36,35 @@ export default function ContributionForm(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form style={{display:'flex', flexDirection:'column', margin:'0 auto', width:'50%'}}>
-            <input 
+        <Form 
+          onSubmit={handleSubmit}
+          style={{
+            display:'flex', 
+            flexDirection:'column', 
+            margin:'0 auto', 
+            width:'50%'
+            }}
+        >
+            <input
+              type='text'
+              name='name' 
               onChange={handleChange}
               placeholder='Enter Name:'
-              value={candidate}
+              value={candidate.name}
             />
             <input 
+              type='text'
+              name='party'
               onChange={handleChange}
               placeholder='Enter Party:'
+              value={candidate.party}
             />
             <input 
+              type='text'
+              name='office'
               onChange={handleChange}
               placeholder='Enter Office:'
+              value={candidate.office}
             />
             <Button>Submit</Button>
         </Form>
