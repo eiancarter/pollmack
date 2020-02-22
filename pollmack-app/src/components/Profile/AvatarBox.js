@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 import ProfileAvatar from './ProfileAvatar';
 
 const AvatarBox = () => {
-  const [address, setAddress] = useState([]);
+  // const [address, setAddress] = useState([]);
   const [addressModalShow, setAddressModalShow] = useState(false);
     return (
       <Grommet theme={grommet}>

@@ -3,11 +3,8 @@ import React from "react";
 import { Anchor, Box, Grommet, Header } from "grommet";
 import { grommet } from "grommet/themes";
 import ProfileAvatar from './ProfileAvatar';
-import FundBox from './FundBox';
 import AvatarBox from './AvatarBox';
-import PostList from './PostList';
 import CandidateRoster from "./CandidateRoster";
-import UserBio from './UserBio';
 import AddressForm from "./AddressForm";
 import NewsFeed from "./NewsFeed";
 
