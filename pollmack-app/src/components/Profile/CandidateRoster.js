@@ -64,15 +64,17 @@ const CandidateRoster = props => {
                       <TableCell>{candidate.party}</TableCell>
                       <TableCell>{candidate.office}</TableCell>
                       <TableCell>$200</TableCell>
-                      <ButtonToolbar>
-                        <Button style={{margin:'2%'}} variant='secondary' onClick={()=> setModalShow(true)}>
-                          Contribute
-                        </Button>
-                        <ContributionForm 
-                          show={modalShow}
-                          onHide={()=> setModalShow(false)}
-                        />
-                      </ButtonToolbar>
+                      <TableCell>
+                        <ButtonToolbar>
+                          <Button style={{margin:'2%'}} variant='secondary' onClick={()=> setModalShow(true)}>
+                            Contribute
+                          </Button>
+                          <ContributionForm 
+                            show={modalShow}
+                            onHide={()=> setModalShow(false)}
+                          />
+                        </ButtonToolbar>
+                      </TableCell>
                     </TableRow>
                   ))}
               </TableBody>
@@ -83,7 +85,7 @@ const CandidateRoster = props => {
               Add Candidate
             </Button>
             <CandidateForm
-              addCandidate={props.addCandidate} 
+              // addCandidate={props.addCandidate} 
               show={candidateModalShow}
               onHide={()=> setCandidateModalShow(false)}
             />
