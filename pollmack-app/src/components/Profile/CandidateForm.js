@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 
 
-export default function ContributionForm(props) {
+export default function CandidateForm(props) {
 
   const [candidate, setNewCandidate] = useState({
     candidate: {

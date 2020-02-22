@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { addCandidate } from '../../redux/actions';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Header } from 'grommet';
 import { grommet } from "grommet/themes";
-import axios from 'axios';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import ContributionForm from './ContributionForm';
 import CandidateForm from './CandidateForm';
-import { Button, ButtonToolbar } from 'react-bootstrap';
 import PostList from './PostList';
 // import { candidateList } from '../../data';
   
@@ -57,7 +59,7 @@ const CandidateRoster = props => {
               </TableHeader>
               <TableBody>
                   {candidates.map( candidate => (
-                    <TableRow key={candidate.id}>
+                    <TableRow key={candidate.id} candidate={candidate}>
                       <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
                       <TableCell>{candidate.party}</TableCell>
                       <TableCell>{candidate.office}</TableCell>
@@ -80,7 +82,8 @@ const CandidateRoster = props => {
             <Button variant='primary' onClick={()=> setCandidateModalShow(true)}>
               Add Candidate
             </Button>
-            <CandidateForm 
+            <CandidateForm
+              addCandidate={props.addCandidate} 
               show={candidateModalShow}
               onHide={()=> setCandidateModalShow(false)}
             />
@@ -93,4 +96,12 @@ const CandidateRoster = props => {
     )
 }
 
-export default CandidateRoster;
+const mapStateToProps = state => {
+  return {
+    ...state,
+    candidates: state.candidates,
+    isFetching: state.isFetching,
+  };
+};
+
+export default connect(mapStateToProps, { addCandidate }) (CandidateRoster);
