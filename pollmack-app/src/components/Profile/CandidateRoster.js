@@ -16,7 +16,7 @@ const CandidateRoster = props => {
   const [candidateModalShow, setCandidateModalShow] = useState(false);
     useEffect(() => {
       axios
-          .get('http://localhost:5600/api/candidates')
+          .get('http://pollmack.herokuapp.com/api/candidates')
           .then(response => {
               console.log(response);
               setCandidates(response.data);
