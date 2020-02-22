@@ -1,3 +1,5 @@
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 export const  axiosWithAuth = () => {
@@ -10,4 +12,11 @@ export const  axiosWithAuth = () => {
             Authorization: `${token}`
         }
     })
-}
+};
+
+export const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={ props =>
+        localStorage.getItem('token') ?
+            (<Component {...props} />) : (<Redirect to='/' />)
+    }/>
+);
