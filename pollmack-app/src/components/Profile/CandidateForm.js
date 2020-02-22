@@ -13,15 +13,13 @@ export default function ContributionForm(props) {
   })
   const handleChange = e => {
     return(
-      e.preventDefault()
+      setNewCandidate(e.target.name)
     )
   }
   
   const handleSubmit = e => {
-    return(
       e.preventDefault()
-      setNewCandidate({e.target.name=[e.target.value]})
-    )
+      // setNewCandidate({...candidate, [e.target.name]: e.target.value})
   }
   return (
     <Modal
@@ -40,6 +38,7 @@ export default function ContributionForm(props) {
             <input 
               onChange={handleChange}
               placeholder='Enter Name:'
+              value={candidate}
             />
             <input 
               onChange={handleChange}

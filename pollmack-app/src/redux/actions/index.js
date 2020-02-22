@@ -1,4 +1,4 @@
-import { axiosWithAuth } from '../utils';
+import { axiosWithAuth } from '../../utils';
 import axios from 'axios';
 
 export const AUTHORIZING = 'AUTHORIZING';
