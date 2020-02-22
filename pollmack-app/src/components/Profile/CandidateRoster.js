@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { addCandidate } from '../../redux/actions';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Header } from 'grommet';
 import { grommet } from "grommet/themes";
-import axios from 'axios';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import ContributionForm from './ContributionForm';
 import CandidateForm from './CandidateForm';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import PostList from './PostList';
 // import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
@@ -25,14 +28,14 @@ const CandidateRoster = props => {
     return (
         <Grommet theme={grommet}>
         <Box
-          style={{color:'white'}}
+          style={{color:'white', boxShadow:'1px 1px 3px grey' }}
           width='large'
-          height='medium'
+          height='large'
           justify="center"
           align="center"
           pad="large"
-          background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
-          round="medium"
+          background="brand"
+          round="small"
         >
           <Header>My Candidates</Header>
           <Table
@@ -49,19 +52,22 @@ const CandidateRoster = props => {
                   <TableCell scope="col" border="bottom">
                       Office
                   </TableCell>
+                  <TableCell scope="col" border="bottom">
+                      Total
+                  </TableCell>
                   </TableRow>
               </TableHeader>
               <TableBody>
-                {/* <TableRow><TableCell>hello</TableCell></TableRow> */}
                   {candidates.map( candidate => (
-                    <TableRow key={candidate.id}>
+                    <TableRow key={candidate.id} candidate={candidate}>
                       <TableCell scope="row"><strong>{candidate.name}</strong></TableCell>
                       <TableCell>{candidate.party}</TableCell>
                       <TableCell>{candidate.office}</TableCell>
+                      <TableCell>$200</TableCell>
                       <ButtonToolbar>
-                        <button variant='primary' onClick={()=> setModalShow(true)}>
+                        <Button style={{margin:'2%'}} variant='secondary' onClick={()=> setModalShow(true)}>
                           Contribute
-                        </button>
+                        </Button>
                         <ContributionForm 
                           show={modalShow}
                           onHide={()=> setModalShow(false)}
@@ -73,17 +79,29 @@ const CandidateRoster = props => {
           </Table>
           <br></br>
           <ButtonToolbar>
-            <button variant='primary' onClick={()=> setCandidateModalShow(true)}>
+            <Button variant='primary' onClick={()=> setCandidateModalShow(true)}>
               Add Candidate
-            </button>
-            <CandidateForm 
+            </Button>
+            <CandidateForm
+              addCandidate={props.addCandidate} 
               show={candidateModalShow}
               onHide={()=> setCandidateModalShow(false)}
             />
           </ButtonToolbar>
+          <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
+            <PostList />
+          </Box>
         </Box>
       </Grommet>
     )
 }
 
-export default CandidateRoster;
+const mapStateToProps = state => {
+  return {
+    ...state,
+    candidates: state.candidates,
+    isFetching: state.isFetching,
+  };
+};
+
+export default connect(mapStateToProps, { addCandidate }) (CandidateRoster);

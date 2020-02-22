@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Form } from 'react-bootstrap';
 
 
 export default function ContributionForm(props) {
@@ -16,15 +16,15 @@ export default function ContributionForm(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
+          <Form style={{display:'flex', flexDirection:'column', margin:'0 auto', width:'50%'}}>
               <input 
                 placeholder='Enter Amount:'
               />
               <input 
                 placeholder='Notes?'
               />
-              <button>Submit</button>
-          </form>
+              <Button>Submit</Button>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

@@ -6,17 +6,18 @@ import ProfileAvatar from './ProfileAvatar';
 import FundBox from './FundBox';
 import AvatarBox from './AvatarBox';
 import PostList from './PostList';
-import UserCandidates from "./CandidateRoster";
+import CandidateRoster from "./CandidateRoster";
 import UserBio from './UserBio';
 import AddressForm from "./AddressForm";
+import NewsFeed from "./NewsFeed";
 
 
 const Profile = () => (
   <Grommet theme={grommet}>
-    <Header background="light-4" pad="small">
-      <Anchor label="pollmack" href="/profile" />
+    <Header background="brand" pad="small">
+      <Anchor style={{color:"white"}} label="pollmack" href="/profile" />
       <Box direction="row" gap="medium">
-        <Anchor label="Search Candidates" href="/profile/candidates" />
+        <Anchor style={{color:"white"}} label="search candidates" href="/profile/candidates" />
       </Box>
       <Anchor href="/profile">
         <ProfileAvatar />
@@ -25,12 +26,12 @@ const Profile = () => (
     <Box style={{margin:"2% 2% 0% 2%"}} align="center" direction="row" gap="medium">
         <AvatarBox />
         <AddressForm />
-        <UserCandidates />
+        <CandidateRoster />
+        <NewsFeed />
     </Box>
-    <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
-        <FundBox />
+    {/* <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
         <PostList />
-    </Box>
+    </Box> */}
   </Grommet>
 );
 
