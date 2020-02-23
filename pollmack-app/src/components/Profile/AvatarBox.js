@@ -29,7 +29,7 @@ const AvatarBox = (props) => {
                 <Text>Total Donated: $389.00</Text>
                 <Text>Candidates Backed: 3</Text>
                 <ButtonToolbar>
-                  <Button variant='primary' onClick={()=> setAddressModalShow(true)}>
+                  <Button style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} variant='primary' onClick={()=> setAddressModalShow(true)}>
                     Address
                   </Button>
                   <AddressForm 

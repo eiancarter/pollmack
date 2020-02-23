@@ -40,7 +40,7 @@ const CreatePost = () => {
                     align='left'
                     ref={inputRef}
                 />
-                <Button style={{width:"20%", margin:"2% auto"}}>Post+</Button>
+                <Button style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px", width:"20%", margin:"2% auto" }}>Post+</Button>
             </Form>
             <Card>
                 <ListGroup>

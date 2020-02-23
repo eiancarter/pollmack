@@ -23,7 +23,7 @@ function App() {
   return (
     <Grommet style={{background: '#d9d9d9'}} theme={theme} className="App">
       <header className="App-header">
-        <Header style={{ width:"100%" }} background="brand" pad="small">
+        <Header style={{ width:"100%" }} background="#20516e" pad="small">
           <Anchor style={{color:"white"}} label="pollmack" href="/profile" />
           <Anchor style={{color:"white"}} label="profile" href="/profile" />
           <Anchor style={{color:"white"}} label="explore" href="/profile/candidates" />

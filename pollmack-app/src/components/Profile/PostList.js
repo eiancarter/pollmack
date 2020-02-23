@@ -7,6 +7,7 @@ import { Box } from 'grommet';
 const PostList = (props) => {
     return (
         <Box
+        style={{ margin:"0 auto" }}
         width='large'
         height='medium'
         justify="center"
