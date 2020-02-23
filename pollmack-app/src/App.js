@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Grommet, Anchor, Box, Header } from "grommet";
+import { Grommet, Anchor, Header } from "grommet";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './components/Home/Home.js';

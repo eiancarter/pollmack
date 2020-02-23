@@ -1,8 +1,7 @@
 import React from "react";
 
-import { Anchor, Box, Grommet, Header } from "grommet";
+import { Box, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
-import ProfileAvatar from './ProfileAvatar';
 import AvatarBox from './AvatarBox';
 import CandidateRoster from "./CandidateRoster";
 import AddressForm from "./AddressForm";
