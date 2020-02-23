@@ -57,7 +57,7 @@ const CandidateList = () => {
     }, [setCandidates]);
     return (
         <Grommet theme={grommet}>
-            <Heading>Presidential Candidates</Heading>
+            <Heading>Your Representatives</Heading>
             <Button>Filter</Button>
             <Box style={{ overflowX:"scroll" }} direction="row" gap="small">
                 {candidates.map(candidate => {
@@ -74,7 +74,7 @@ const CandidateList = () => {
                     )
                 })}
             </Box>
-            <Heading>Congressional Candidates</Heading>
+            <Heading>Upcoming Elections</Heading>
             <Button>Filter</Button>
             <Box style={{ overflowX:"scroll" }} direction="row" gap="small">
                 {candidates.map(candidate => {

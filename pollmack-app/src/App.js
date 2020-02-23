@@ -26,7 +26,7 @@ function App() {
         <Header style={{ width:"100%" }} background="brand" pad="small">
           <Anchor style={{color:"white"}} label="pollmack" href="/profile" />
           <Anchor style={{color:"white"}} label="profile" href="/profile" />
-          <Anchor style={{color:"white"}} label="search candidates" href="/profile/candidates" />
+          <Anchor style={{color:"white"}} label="explore" href="/profile/candidates" />
           <Anchor href="/profile">
             <ProfileAvatar />
           </Anchor>
