@@ -14,13 +14,14 @@ const theme = {
       family: 'Roboto',
       size: '18px',
       height: '20px',
+      background: '#d9d9d9',
     },
   },
 };
 
 function App() {
   return (
-    <Grommet theme={theme} className="App">
+    <Grommet style={{background: '#d9d9d9'}} theme={theme} className="App">
       <header className="App-header">
         <Header style={{ width:"100%" }} background="brand" pad="small">
           <Anchor style={{color:"white"}} label="pollmack" href="/profile" />

@@ -3,18 +3,17 @@ import { Grommet, Box, Header, Text } from "grommet";
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import AddressForm from './AddressForm';
 import FundBox from './FundBox';
-import { grommet } from 'grommet/themes';
 import ProfileAvatar from './ProfileAvatar';
 
-const AvatarBox = () => {
+
+const AvatarBox = (props) => {
   // const [address, setAddress] = useState([]);
   const [addressModalShow, setAddressModalShow] = useState(false);
     return (
-      <Grommet theme={grommet}>
+      <Grommet>
         <Box 
-          style={{boxShadow:"1px 1px 3px grey"}}
+          style={{ color: '#423e3a', boxShadow:"1px 1px 3px grey", background:'white' }}
           round="small"
-          background="brand"
         >
             <Box
               width='medium'

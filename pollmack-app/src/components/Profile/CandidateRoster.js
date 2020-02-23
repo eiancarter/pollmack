@@ -3,7 +3,6 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { addCandidate } from '../../redux/actions';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Header } from 'grommet';
-import { grommet } from "grommet/themes";
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import ContributionForm from './ContributionForm';
 import CandidateForm from './CandidateForm';
@@ -26,15 +25,14 @@ const CandidateRoster = props => {
           })
     }, [setCandidates]);
     return (
-        <Grommet theme={grommet}>
+        <Grommet>
         <Box
-          style={{color:'white', boxShadow:'1px 1px 3px grey' }}
+          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white' }}
           width='large'
           height='large'
           justify="center"
           align="center"
           pad="large"
-          background="brand"
           round="small"
         >
           <Header>My Candidates</Header>

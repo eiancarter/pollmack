@@ -1,10 +1,10 @@
 import React from "react";
-import { Grommet, Box, Text, Button } from "grommet";
-import { grommet } from "grommet/themes";
+import { Grommet, Box, Text } from "grommet";
+import { Button } from 'react-bootstrap';
 
 
 const FundBox = () => (
-  <Grommet theme={grommet}>
+  <Grommet>
     <Box
       width='medium'
       height='medium'
@@ -12,16 +12,19 @@ const FundBox = () => (
       align="center"
       pad="large"
       round="small"
-      style={{boxShadow:"1px 1px 3px grey"}}
     >
-      <Text>Balance: $20</Text>
+      <Text>Current Balance: $20</Text>
       <br></br>
       <Box
           direction='column'
         >
-        <Button type='submit' label='Add' primary={true} />
+        <Button type='submit'>
+          Add to Wallet
+        </Button>
         <br></br>
-        <Button type='submit' label='Payments' primary={true} />
+        <Button type='submit'>
+          Edit Payment Method
+        </Button>
       </Box>
     </Box>
   </Grommet>

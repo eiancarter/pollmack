@@ -1,11 +1,10 @@
 import React from 'react';
 import { Grommet, Box } from 'grommet';
-import { grommet } from 'grommet/themes';
 
 
 const UserBio = () => {
     return (
-        <Grommet theme={grommet}>
+        <Grommet>
             <Box
                 width='medium'
                 height='medium'
