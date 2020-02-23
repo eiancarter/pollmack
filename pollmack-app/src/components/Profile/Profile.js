@@ -11,7 +11,7 @@ import NewsFeed from "./NewsFeed";
 
 const Profile = () => (
   <Grommet theme={grommet}>
-    <Header background="brand" pad="small">
+    {/* <Header style={{ width:"100%" }} background="brand" pad="small">
       <Anchor style={{color:"white"}} label="pollmack" href="/profile" />
       <Box direction="row" gap="medium">
         <Anchor style={{color:"white"}} label="search candidates" href="/profile/candidates" />
@@ -19,7 +19,7 @@ const Profile = () => (
       <Anchor href="/profile">
         <ProfileAvatar />
       </Anchor>
-    </Header>
+    </Header> */}
     <Box style={{margin:"2% 2% 0% 2%"}} align="center" direction="row" gap="medium">
         <AvatarBox />
         <AddressForm />
