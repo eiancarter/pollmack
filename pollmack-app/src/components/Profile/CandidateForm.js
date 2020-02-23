@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { addCandidate } from '../../redux/actions';
 import { Modal, Button, Form } from 'react-bootstrap';
 
 
-export default function CandidateForm(props) {
+const CandidateForm = (props) => {
 
   const [candidate, setNewCandidate] = useState({
     candidate: {
       name:"",
       party:"",
-      office:""
+      office:"",
     }
   })
   const handleChange = e => {
@@ -18,9 +21,16 @@ export default function CandidateForm(props) {
   }
   
   const handleSubmit = e => {
-      e.preventDefault()
-      props.addCandidate(candidate);
-      setNewCandidate({ name: '', party: '', office: '' })
+    e.preventDefault()
+    axios
+      .post('http://pollmack.herokuapp.com/api/candidates', candidate)
+      .then(res => {
+        console.log(res, 'post candidate response')
+        props.addCandidate(candidate)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   return (
@@ -75,3 +85,10 @@ export default function CandidateForm(props) {
     </Modal>
   );
 }
+
+const mapStateToProps = () => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, { addCandidate })(CandidateForm);
