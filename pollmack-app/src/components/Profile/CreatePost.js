@@ -35,7 +35,7 @@ const CreatePost = () => {
     }
     return (
         <Card style={{width:"100%"}}>
-            <Form style={{widht:"90%", display:"flex", flexDirection:"column", alignContent:"center"}} onSubmit={handleSubmit}>
+            <Form style={{width:"100%", display:"flex", flexDirection:"column", alignContent:"center"}} onSubmit={handleSubmit}>
                 <textarea
                     align='left'
                     ref={inputRef}
