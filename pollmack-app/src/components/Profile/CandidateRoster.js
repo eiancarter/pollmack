@@ -35,7 +35,7 @@ const CandidateRoster = props => {
           pad="large"
           round="small"
         >
-          <Header>My Candidates</Header>
+          <Header style={{ margin:"4%", fontWeight:"bold", fontSize:"2rem"}}>My Candidates</Header>
           <Table
               align="center"
           >
@@ -79,7 +79,7 @@ const CandidateRoster = props => {
           </Table>
           <br></br>
           <ButtonToolbar>
-            <Button variant='primary' onClick={()=> setCandidateModalShow(true)}>
+            <Button style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} onClick={()=> setCandidateModalShow(true)}>
               Add Candidate
             </Button>
             <CandidateForm
@@ -88,9 +88,6 @@ const CandidateRoster = props => {
               onHide={()=> setCandidateModalShow(false)}
             />
           </ButtonToolbar>
-          <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
-            <PostList />
-          </Box>
         </Box>
       </Grommet>
     )

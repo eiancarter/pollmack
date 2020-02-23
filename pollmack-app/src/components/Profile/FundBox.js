@@ -18,11 +18,11 @@ const FundBox = () => (
       <Box
           direction='column'
         >
-        <Button type='submit'>
+        <Button style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} type='submit'>
           Add to Wallet
         </Button>
         <br></br>
-        <Button type='submit'>
+        <Button style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} type='submit'>
           Edit Payment Method
         </Button>
       </Box>

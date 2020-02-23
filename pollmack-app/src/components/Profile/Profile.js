@@ -9,13 +9,13 @@ import PostList from './PostList';
 
 const Profile = () => (
   <Grommet>
-    <Box style={{margin:"2% 2% 0% 2%", background: '#d9d9d9' }} align="center" direction="row" gap="medium">
+    <Box style={{margin:"2% 2% 0% 2%", background: '#d9d9d9' }} align="center" direction="row" gap="xsmall">
         <AvatarBox />
         <AddressForm />
         <CandidateRoster />
         <NewsFeed />
     </Box>
-    <Box style={{marginTop:"2%"}} direction="row" align="center" gap="medium">
+    <Box style={{marginTop:"2%"}} direction="row" align="center" gap="xsmall">
         <PostList />
     </Box>
   </Grommet>
