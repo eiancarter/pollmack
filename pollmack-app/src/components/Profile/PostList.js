@@ -16,7 +16,7 @@ const PostList = (props) => {
         round="medium"
         >
             <CreatePost />
-            <PostCard />
+            {/* <PostCard /> */}
         </Box>
     )
 }
