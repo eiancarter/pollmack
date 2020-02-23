@@ -15,9 +15,7 @@ const CandidateForm = (props) => {
     }
   })
   const handleChange = e => {
-    return(
       setNewCandidate({...candidate, [e.target.name]: e.target.value })
-    )
   }
   
   const handleSubmit = e => {
@@ -61,6 +59,7 @@ const CandidateForm = (props) => {
               onChange={handleChange}
               placeholder='Enter Name:'
               value={candidate.name}
+              required
             />
             <input 
               type='text'
@@ -68,6 +67,7 @@ const CandidateForm = (props) => {
               onChange={handleChange}
               placeholder='Enter Party:'
               value={candidate.party}
+              required
             />
             <input 
               type='text'
@@ -75,6 +75,7 @@ const CandidateForm = (props) => {
               onChange={handleChange}
               placeholder='Enter Office:'
               value={candidate.office}
+              required
             />
             <Button>Submit</Button>
         </Form>
