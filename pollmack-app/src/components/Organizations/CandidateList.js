@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { Grommet, Box, Anchor, Header, Heading, Button, Paragraph } from 'grommet';
+import { Grommet, Box, Heading, Button, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes'; 
 import axios from 'axios';
-import ProfileAvatar from '../Profile/ProfileAvatar';
 
 const styleCard = {
     margin: "12px 0px",
@@ -58,15 +57,6 @@ const CandidateList = () => {
     }, [setCandidates]);
     return (
         <Grommet theme={grommet}>
-            <Header background="light-4" pad="small">
-                <Anchor label="pollmack" href="/profile" />
-                <Box direction="row" gap="medium">
-                    <Anchor label="Profile" href="/profile" />
-                </Box>
-                <Anchor href="/profile">
-                    <ProfileAvatar />
-                </Anchor>
-            </Header>
             <Heading>Presidential Candidates</Heading>
             <Button>Filter</Button>
             <Box style={{ overflowX:"scroll" }} direction="row" gap="small">
