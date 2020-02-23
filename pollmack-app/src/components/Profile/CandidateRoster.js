@@ -6,8 +6,6 @@ import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Heade
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import ContributionForm from './ContributionForm';
 import CandidateForm from './CandidateForm';
-import PostList from './PostList';
-// import { candidateList } from '../../data';
   
 const CandidateRoster = props => {
   const [candidates, setCandidates] = useState([]);

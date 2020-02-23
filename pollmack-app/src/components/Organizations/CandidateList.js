@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { Grommet, Box, Heading, Button, Paragraph } from 'grommet';
-import { grommet } from 'grommet/themes'; 
 import axios from 'axios';
 
 const styleCard = {
     margin: "12px 0px",
     boxShadow: "0px 0px 8px #ccc",
     borderRadius: "8px",
-    color: "#253B56",
+    color: '#423e3a',
     height: "280px",
     width: "450px",
     position: "relative",
@@ -29,7 +28,7 @@ const styleCard = {
     fontSize: 20,
     fontWeight: 600,
     margin: "12px 0px 0px 0px",
-    color: "#1994D7"
+    color: '#423e3a'
   };
   
   const styleDescription = {
@@ -43,10 +42,12 @@ const styleCard = {
 const CandidateList = () => {
     //AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo = API Key
     const [candidates, setCandidates] = useState([]);
+    const [elections, setElections] = useState([]);
+
     useEffect(() => {
         const address = 'USA'
         axios
-            .get('https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo&address=1263%20Pacific%20Ave.%20Kansas%20City%20KS"', address)
+            .get('https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo&address=300%20Bryant%20St.%20Palo%20Alto%20CA"', address)
             .then(response => {
                 console.log(response.data.officials);
                 setCandidates(response.data.officials);
@@ -55,8 +56,21 @@ const CandidateList = () => {
                 console.log('No Candidates Found', error);
             })
     }, [setCandidates]);
+
+    useEffect(() => {
+        const address = 'USA'
+        axios
+            .get('https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo&address=300%20Bryant%20St.%20Palo%20Alto%20CA"', address)
+            .then(response => {
+                console.log(response.data.elections);
+                setElections(response.data.elections);
+            })
+            .catch (error => {
+                console.log('No Elections Found', error);
+            })
+    }, [setElections]);
     return (
-        <Grommet theme={grommet}>
+        <Grommet>
             <Heading>Your Representatives</Heading>
             <Button>Filter</Button>
             <Box style={{ overflowX:"scroll" }} direction="row" gap="small">
@@ -77,15 +91,12 @@ const CandidateList = () => {
             <Heading>Upcoming Elections</Heading>
             <Button>Filter</Button>
             <Box style={{ overflowX:"scroll" }} direction="row" gap="small">
-                {candidates.map(candidate => {
+                {elections.map(election => {
                     return (
-                        <Box style={styleCard} align='center' key={candidate.id}>
-                            <Box style={styleCardContent} key={candidate.id} align='center'>
-                                <img style={styleImage} src={candidate.photoUrl} alt='candidate'/>
-                                <Paragraph style={styleCardTitle}>{candidate.name}</Paragraph>
-                                <Paragraph style={styleDescription}>{candidate.party}</Paragraph>
-                                <Paragraph style={styleDescription}>Contact: {candidate.phones}</Paragraph>    
-                                <Paragraph style={styleDescription}>Website: {candidate.urls}</Paragraph> 
+                        <Box style={styleCard} align='center' key={election.id}>
+                            <Box style={styleCardContent} key={election.id} align='center'>
+                                <Paragraph style={styleCardTitle}>{election.name}</Paragraph>
+                                <Paragraph style={styleDescription}>{election.electionDay}</Paragraph>    
                             </Box>
                         </Box>
                     )
