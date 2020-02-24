@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { addCandidate } from '../../redux/actions';
+import { getCandidates } from '../../redux/actions';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Header } from 'grommet';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import ContributionForm from './ContributionForm';
@@ -99,4 +99,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { addCandidate }) (CandidateRoster);
+export default connect(mapStateToProps, { getCandidates }) (CandidateRoster);
