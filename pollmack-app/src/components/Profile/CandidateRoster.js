@@ -25,10 +25,10 @@ const CandidateRoster = props => {
     return (
         <Grommet>
         <Box
-          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white' }}
+          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white', overflowY:'scroll', scrollbarWidth:'none' }}
           width='large'
           height='large'
-          justify="center"
+          justify="top"
           align="center"
           pad="large"
           round="small"

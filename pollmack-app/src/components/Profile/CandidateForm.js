@@ -17,11 +17,13 @@ const CandidateForm = (props) => {
     e.preventDefault();
     console.log('saved candidate:', candidate)
     props.addCandidate(
-    {
-        name: candidate.name,
-        party: candidate.party,
-        office: candidate.office,
-    })
+      // {
+      //   name: candidate.name,
+      //   party: candidate.party,
+      //   office: candidate.office,
+      // }
+      candidate
+    )
 }
 
   return (

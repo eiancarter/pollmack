@@ -25,6 +25,7 @@ const AvatarBox = (props) => {
             >
                 <ProfileAvatar style={{width:"100px", height:"100px"}} />
                 <Header style={{fontSize:"2rem"}}>Veronica</Header>
+                <br></br>
                 <Text>Joined: February 2018</Text>
                 <Text>Total Donated: $389.00</Text>
                 <Text>Candidates Backed: 3</Text>
