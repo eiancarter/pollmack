@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { addCandidate } from '../../redux/actions';
 import { Modal, Button } from 'react-bootstrap';
@@ -12,7 +11,6 @@ const CandidateForm = (props) => {
       setNewCandidate({...candidate, [e.target.name]: e.target.value })
   }
   
-
   const handleSubmit = e => {
     e.preventDefault();
     console.log('saved candidate:', candidate)

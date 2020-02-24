@@ -28,7 +28,7 @@ const CandidateRoster = props => {
           style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white', overflowY:'scroll' }}
           width='large'
           height='large'
-          justify="top"
+          justify="start"
           align="center"
           pad="large"
           round="small"
