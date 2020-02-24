@@ -25,7 +25,7 @@ const CandidateRoster = props => {
     return (
         <Grommet>
         <Box
-          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white', overflowY:'scroll', scrollbarWidth:'none' }}
+          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white', overflowY:'scroll' }}
           width='large'
           height='large'
           justify="top"
@@ -35,7 +35,7 @@ const CandidateRoster = props => {
         >
           <Header style={{ margin:"4%", fontWeight:"bold", fontSize:"2rem"}}>My Candidates</Header>
           <Table
-              align="center"
+            align="center"
           >
               <TableHeader>
                   <TableRow>

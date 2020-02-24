@@ -5,8 +5,8 @@ import { Button } from 'react-bootstrap';
 
 const FundBox = () => {
 
-  const [funds, setFunds] = useState(500);
-  const [input, setInput] = useState(0);
+  const [funds, setFunds] = useState(0);
+
   return (
     <Grommet>
       <Box
@@ -17,17 +17,17 @@ const FundBox = () => {
         pad="large"
         round="small"
       >
-        <Text>Current Balance: ${input}</Text>
+        <Text>Current Balance: ${funds}</Text>
         <br></br>
         <Box
             direction='column'
           >
-          <Button onClick={()=> setInput(funds)} style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} type='submit'>
+          <Button onClick={()=> setFunds(funds + 50)} style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} type='submit'>
             Add to Wallet
           </Button>
           <br></br>
-          <Button style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} type='submit'>
-            Edit Payment Method
+          <Button onClick={()=> setFunds(funds - 50)} style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} type='submit'>
+            Remove from Wallet
           </Button>
         </Box>
       </Box>
