@@ -25,7 +25,7 @@ const CandidateRoster = props => {
     return (
         <Grommet>
         <Box
-          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white', overflowY:'scroll' }}
+          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white', overflowY:'scroll', overflowX:'hidden' }}
           width='large'
           height='large'
           justify="start"
