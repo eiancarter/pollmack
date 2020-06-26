@@ -8,7 +8,7 @@ const CandidateForm = (props) => {
 
   const [candidate, setNewCandidate] = useState([])
   const handleChange = e => {
-      setNewCandidate({...candidate, [e.target.name]: e.target.value })
+      setNewCandidate({ ...candidate, [e.target.name]: e.target.value })
   }
   
   const handleSubmit = e => {
