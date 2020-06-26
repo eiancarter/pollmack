@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { addCandidate } from '../../redux/actions';
+import { getCandidates } from '../../redux/actions';
 import { Grommet, Box, Table, TableHeader, TableRow, TableCell, TableBody, Header } from 'grommet';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import ContributionForm from './ContributionForm';
@@ -25,17 +25,17 @@ const CandidateRoster = props => {
     return (
         <Grommet>
         <Box
-          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white' }}
+          style={{ color: '#423e3a', boxShadow:'1px 1px 3px grey', background:'white', overflowY:'scroll', overflowX:'hidden' }}
           width='large'
           height='large'
-          justify="center"
+          justify="start"
           align="center"
           pad="large"
           round="small"
         >
           <Header style={{ margin:"4%", fontWeight:"bold", fontSize:"2rem"}}>My Candidates</Header>
           <Table
-              align="center"
+            align="center"
           >
               <TableHeader>
                   <TableRow>
@@ -99,4 +99,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { addCandidate }) (CandidateRoster);
+export default connect(mapStateToProps, { getCandidates }) (CandidateRoster);

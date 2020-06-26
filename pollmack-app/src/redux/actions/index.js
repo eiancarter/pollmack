@@ -25,7 +25,7 @@ export const getCandidates = () => dispatch => {
     dispatch({ type: FETCH_CANDIDATE_START });
     //axios with auth?
     axios
-        .get('http://pollmack.herokuapp.com/api/candidates')
+        .get('https://pollmack.herokuapp.com/api/candidates')
         .then(res => {
             console.log(res)
             dispatch({ type: FETCH_CANDIDATE_SUCCESS, payload: res.data })
@@ -40,7 +40,7 @@ export const addCandidate = candidate => {
     return dispatch => {
         dispatch({ type: ADD_CANDIDATE_START });
         axios
-            .post(`http://pollmack.herokuapp.com/api/candidates`, candidate)
+            .post(`https://pollmack.herokuapp.com/api/candidates`, candidate)
             .then(res => {
                 dispatch({ type: ADD_CANDIDATE_SUCCESS, payload: res.data })
             })
@@ -54,7 +54,7 @@ export const deleteCandidate = candidate => {
     return dispatch => {
         dispatch({ type: DELETE_CANDIDATE_START });
         axios
-            .delete(`http://pollmack.herokuapp.com/api/candidates/${candidate.id}`)
+            .delete(`https://pollmack.herokuapp.com/api/candidates/${candidate.id}`)
             .then(res => dispatch({ type: DELETE_CANDIDATE_SUCCESS, payload: res.data }))
             .catch(err => dispatch({ type: DELETE_CANDIDATE_FAILURE, payload: err }));
     };
@@ -64,7 +64,7 @@ export const updateCandidate = candidate => {
     return dispatch => {
         dispatch({ type: UPDATE_CANDIDATE_START });
         axios
-            .put(`http://pollmack.herokuapp.com/api/candidates/${candidate.id}`, candidate)
+            .put(`https://pollmack.herokuapp.com/api/candidates/${candidate.id}`, candidate)
             .then(res => dispatch({ type: UPDATE_CANDIDATE_SUCCESS, payload: res.data }))
             .catch(err => dispatch({ type: UPDATE_CANDIDATE_FAILURE, payload: err }));
     };

@@ -23,11 +23,13 @@ const AvatarBox = (props) => {
               pad="large"
               round="small"
             >
-                <ProfileAvatar style={{width:"100px", height:"100px"}} />
-                <Header style={{fontSize:"2rem"}}>Veronica</Header>
+                <ProfileAvatar style={{width:"100px", height:"100px", marginBottom:'2%'}} />
+                <Header style={{fontSize:"2rem"}}>Molly</Header>
+                <br></br>
                 <Text>Joined: February 2018</Text>
                 <Text>Total Donated: $389.00</Text>
-                <Text>Candidates Backed: 3</Text>
+                <Text>Candidates Supported: 6</Text>
+                <br></br>
                 <ButtonToolbar>
                   <Button style={{ fontWeight:"bold", background: "#20516e", borderRadius:"20px" }} variant='primary' onClick={()=> setAddressModalShow(true)}>
                     Address
