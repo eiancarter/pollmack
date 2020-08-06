@@ -46,7 +46,7 @@ const CandidateList = () => {
     useEffect(() => {
         const address = 'USA'
         axios
-            .get('https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo&address=300%20Bryant%20St.%20Palo%20Alto%20CA"', address)
+            .get(`https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.API_KEY}&address=300%20Bryant%20St.%20Palo%20Alto%20CA"`, address)
             .then(response => {
                 console.log(response.data.officials);
                 setCandidates(response.data.officials);
