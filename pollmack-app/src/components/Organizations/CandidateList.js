@@ -40,7 +40,6 @@ const styleCard = {
     padding: "4px 16px 20px 16px",
   };
 const CandidateList = () => {
-    //AIzaSyAKyvvk_iDO_aZnftoRKrVyNIzlYw_9XRo = API Key
     const [candidates, setCandidates] = useState([]);
     const [elections, setElections] = useState([]);
 
